@@ -1,0 +1,42 @@
+
+<script type="text/javascript">
+    
+    class Stack{
+        constructor(){
+            this.items = [];
+        }
+
+
+        push(element){
+            // push element into the items
+            this.items.push(element);
+        }
+        pop(){
+            if(this.items.length == 0)
+                return "Underflow";
+            return this.items.pop();
+        }
+        peek(){
+            document.write( this.items[this.items.length-1]);
+        }
+
+        isEmpty(){
+            return this.items.length == 0;
+        }
+
+        print(){
+            for(let i = 0; i<this.items.length; i ++)
+            {
+                document.write(this.items[i] + "<br>");
+            }
+        }
+    }
+
+    obj = new Stack();
+    obj.push(10);
+    obj.push(20);
+    obj.push(30);
+    obj.push(40);
+    obj.print();
+    obj.peek();
+</script>

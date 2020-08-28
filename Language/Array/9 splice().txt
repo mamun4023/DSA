@@ -1,0 +1,15 @@
+<script type="text/javascript">
+
+
+
+
+var d = [1,2,3,4,5];
+// 2 is position and 0 means items 
+d.splice(2,0,33,44);
+
+document.write(d);
+
+
+
+
+</script>

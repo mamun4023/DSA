@@ -1,0 +1,50 @@
+
+<script type="text/javascript">
+    
+
+
+    class Queue {
+        constructor(){
+            this.items = [];
+        }
+
+
+    // enqueue 
+    enqueue(element){
+        this.items.push(element);
+    }
+
+    // dequeue
+    dequeue(){
+        this.items.shift();
+    }
+
+    // show front item
+    front(){
+        document.write("Front of Queue: "+this.items[0] + "</br>");
+    }
+    // show rear
+    rear(){
+        document.write("Rear of Queue:"+this.items[this.items.length-1]);
+    }
+
+    // print queue
+    print(){
+        for(let i=0; i<this.items.length; i++)
+        {
+            document.write(this.items[i]+ "<br>");
+        }
+    }
+
+    }
+
+
+obj = new Queue();
+obj.enqueue(10);
+obj.enqueue(20);
+obj.enqueue(30);
+obj.enqueue(40);
+obj.print();
+obj.front();
+obj.rear();
+</script>

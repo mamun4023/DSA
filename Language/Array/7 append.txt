@@ -1,0 +1,12 @@
+<script type="text/javascript">
+
+
+
+var d = [1,2,3,4];
+
+// append the list 
+d[d.length] = 55;
+
+document.write(d);
+
+</script>

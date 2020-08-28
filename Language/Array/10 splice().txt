@@ -1,0 +1,14 @@
+<script type="text/javascript">
+
+
+
+
+var d = [1,2,3,4,5];
+// delete elements position 3 to position 4 two elements 
+d.splice(3,2);
+document.write(d);
+
+
+
+
+</script>

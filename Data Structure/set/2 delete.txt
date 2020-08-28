@@ -1,0 +1,15 @@
+<script type="text/javascript">
+	
+
+	var set = new Set();
+	set.add('java');
+	set.add('java script');
+	set.add("python");
+	set.delete('java');
+
+	for(let x of set){
+		document.writeln(x+ "<br>");
+	}
+
+
+</script>

@@ -1,0 +1,12 @@
+<script>  
+var map = new Map();  
+map.set(1,"jQuery");  
+map.set(2,"AngularJS");  
+map.set(3,"Bootstrap");  
+document.writeln("Fetching values and keys :"+"<br>");  
+function display(values,key)   
+{  
+document.writeln(values+" "+key+"<br>");  
+}  
+map.forEach(display);  
+</script>

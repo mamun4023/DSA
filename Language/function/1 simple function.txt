@@ -1,0 +1,12 @@
+
+<script type="text/javascript">
+	// function definition
+
+	function welcomeMsg(name){
+		document.write("Hello " + name );
+	}
+
+
+	var  nameVal = "Admin";
+	welcomeMsg(nameVal);
+</script>

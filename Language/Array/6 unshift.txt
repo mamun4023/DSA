@@ -1,0 +1,12 @@
+<script type="text/javascript">
+
+
+
+var d = [1,2,3,4];
+
+// add  element in the first position 
+d.unshift(4);
+document.write(d);
+
+
+</script>

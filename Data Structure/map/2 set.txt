@@ -1,0 +1,11 @@
+
+<script type="text/javascript">
+	
+	var map = new Map();
+
+	map.set(1,"java");
+	map.set(2,"Angular");
+	map.set(2," React");
+
+	document.write("Map size : "+map.size);
+</script>

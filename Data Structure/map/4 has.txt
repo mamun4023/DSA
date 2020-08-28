@@ -1,0 +1,14 @@
+
+
+<script type="text/javascript">
+	
+	var map = new Map();
+
+	map.set(1,"java");
+	map.set(2,"Angular");
+	map.set(3," React");
+
+	document.write("Map has : "+map.has(3));
+
+
+</script>

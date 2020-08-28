@@ -1,0 +1,12 @@
+<script type="text/javascript">
+
+
+
+var d = [1,2,3,4];
+
+// delete first element from an array
+d.shift();
+document.write(d);
+
+
+</script>

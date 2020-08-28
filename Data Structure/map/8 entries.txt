@@ -1,0 +1,11 @@
+<script>  
+var map=new Map();  
+map.set(1,"jQuery");  
+map.set(2,"AngularJS");  
+map.set(3,"Bootstrap");  
+var itr=map.entries();  
+for(i=0;i<map.size;i++)  
+  {  
+document.writeln(itr.next().value+"<br>");  
+  }  
+  </script>

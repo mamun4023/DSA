@@ -1,0 +1,13 @@
+
+<script type="text/javascript">
+	
+
+	var arr =  ['A','B','C',"D"];
+	var d = arr.keys();
+	document.write(d);
+
+ for (x of d){				// in is unsed to return key       
+ 	console.log(x);
+ }
+
+</script>

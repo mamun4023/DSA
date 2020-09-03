@@ -1,14 +1,12 @@
 
-
 <script type="text/javascript">
-	
-	var map = new Map();
 
-	map.set(1,"java");
-	map.set(2,"Angular");
-	map.set(3," React");
 
-	document.write("Map has : "+map.has(3));
+var map1 = new Map();
+map1.set("name","tohid");
+map1.set("age", 'korim');
+
+console.log(map1.has('name'));  // return true if it has specific key
 
 
 </script>

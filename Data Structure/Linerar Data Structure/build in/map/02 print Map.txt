@@ -1,0 +1,14 @@
+<script>  
+var map = new Map();  
+map.set(1,"jQuery");  
+map.set(2,"AngularJS");  
+map.set(3,"Bootstrap");  
+
+
+var itr = map[Symbol.iterator]();
+
+for(let x of itr){
+	document.write(x + "<br>");
+}
+
+</script>

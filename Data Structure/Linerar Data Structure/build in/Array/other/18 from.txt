@@ -1,0 +1,10 @@
+
+<script type="text/javascript">
+	
+
+	let string = "Hello world";
+	let d = Array.from(string);   // convert string to array
+	document.write(d);
+
+
+</script>

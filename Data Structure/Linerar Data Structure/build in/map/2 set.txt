@@ -6,6 +6,6 @@
 	map.set(1,"java");
 	map.set(2,"Angular");
 	map.set(2," React");
-
+        console.log(map);
 	document.write("Map size : "+map.size);
 </script>

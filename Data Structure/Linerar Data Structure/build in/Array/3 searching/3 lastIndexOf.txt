@@ -1,7 +1,8 @@
 
 <script type="text/javascript">
+	
+var fruits = ["Banana", "Orange", "Apple", "Mango", "Banana", "Orange", "Apple"];
+var a = fruits.lastIndexOf("Apple");
 
-let arr = ["A", "B", "C", "D"];
-document.write(lastIndexOf(arr);   // return true if data is included 
-
+document.write(a);
 </script>

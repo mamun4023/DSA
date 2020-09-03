@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+	
+
+	var arr = [1,2,3,4];
+	var d = arr.toString();  // convert array to sting 
+	document.write(typeof d);
+
+</script>

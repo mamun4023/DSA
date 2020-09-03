@@ -1,0 +1,8 @@
+
+<script type="text/javascript">
+
+var map1 = new Map([[1,"Tohid"],[2, "abed"],[3, "Korim"]]);
+
+console.log(map1);
+
+</script>

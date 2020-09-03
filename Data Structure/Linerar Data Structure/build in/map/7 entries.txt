@@ -1,11 +1,14 @@
 <script>  
-var map=new Map();  
+
+
+var map = new Map();  
 map.set(1,"jQuery");  
 map.set(2,"AngularJS");  
 map.set(3,"Bootstrap");  
   
-var itr=map.entries();  
+var itr=map.entries();     // return an iterator object
 document.writeln(itr.next().value+"<br>");  
 document.writeln(itr.next().value+"<br>");  
 document.writeln(itr.next().value);  
+  
   </script>  

@@ -1,14 +1,13 @@
 
 <script type="text/javascript">
-	
-	var map = new Map();
 
-	map.set(1,"java");
-	map.set(2,"Angular");
-	map.set(3," React");
 
-	document.write("Map size : "+map.size + "<br>");
-	map.delete(2);
-	document.write("After clear : " + map.size)
+var map1 = new Map();
+map1.set("name","tohid");
+map1.set("age", 23);
+
+map1.delete('age');   // delete value by using key
+console.log(map1); 
+
 
 </script>

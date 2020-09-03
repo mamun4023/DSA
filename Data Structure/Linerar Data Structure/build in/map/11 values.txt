@@ -1,10 +1,11 @@
-<script>  
+<script >  
 var map=new Map();  
 map.set(1,"jQuery");  
 map.set(2,"AngularJS");  
 map.set(3,"Bootstrap");  
-var itr=map.values();  
+
+var itr = map.values();   // return all the value 
 document.writeln(itr.next().value+"<br>");  
 document.writeln(itr.next().value+"<br>");  
 document.writeln(itr.next().value);  
- </script>  
+ </script> 

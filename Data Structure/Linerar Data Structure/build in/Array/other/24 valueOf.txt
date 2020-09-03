@@ -1,0 +1,8 @@
+
+<script type="text/javascript">
+	
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var v = fruits.valueOf();   // copy the all elements
+
+document.write(v);
+</script>

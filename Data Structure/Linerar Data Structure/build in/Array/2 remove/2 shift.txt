@@ -1,0 +1,10 @@
+
+<script type="text/javascript">
+
+let arr = ['A','B','C'];
+arr.shift()   // remove from begening  
+
+document.write(arr);
+
+
+</script>

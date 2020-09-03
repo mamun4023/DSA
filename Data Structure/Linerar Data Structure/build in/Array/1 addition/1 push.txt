@@ -1,0 +1,12 @@
+
+<script type="text/javascript">
+
+let arr = ['A','B','C'];
+arr.push('DD');   // add item at last
+
+document.write(arr);
+
+
+
+
+</script>

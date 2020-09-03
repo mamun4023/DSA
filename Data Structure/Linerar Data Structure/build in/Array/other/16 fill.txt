@@ -1,0 +1,10 @@
+
+<script type="text/javascript">
+
+
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.fill("Kiwi", 2, 4);     (data, start, end) 
+document.write(fruits);
+
+</script>

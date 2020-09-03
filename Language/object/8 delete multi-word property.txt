@@ -1,0 +1,14 @@
+<script type="text/javascript">
+	
+
+// multi-word property  
+
+let user = {			
+	name : 'Jhon',		 
+	age : 30,			
+	'is man' : true		
+}
+delete user["is man"];    // delete multi-word property
+document.write(user["is man"]);
+ 
+</script>

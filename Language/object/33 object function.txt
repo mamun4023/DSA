@@ -1,0 +1,20 @@
+<script type="text/javascript">
+	
+
+
+let user = {
+	name : "Tohid",
+	age : 34
+}
+
+
+user.syHi = function(){
+	alert("hello...")
+};
+
+user.syHi();
+
+
+
+
+</script>

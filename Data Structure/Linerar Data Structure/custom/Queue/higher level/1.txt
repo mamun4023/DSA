@@ -1,0 +1,19 @@
+
+<script type="text/javascript">
+
+
+var q = new Array();
+
+// enqueue elements  
+q.unshift('A');
+q.unshift('B');
+q.unshift('C');
+q.unshift('D');
+q.unshift('E');
+
+
+// dequeue 
+document.write(q.pop() + "<br>");
+document.write(q.pop());
+
+</script>

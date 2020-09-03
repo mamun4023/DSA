@@ -1,0 +1,17 @@
+<script type="text/javascript">
+	
+
+
+let obj = {
+	name : "tohid",
+	age : 30,
+	"is Male" : true
+}
+
+
+for(let x in obj){
+	document.write(x +" : ");   // print all of the object keys
+	document.write(obj[x]+"<br>"); // print values
+}
+
+</script>

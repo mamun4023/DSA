@@ -1,0 +1,7 @@
+
+<script type="text/javascript">
+
+let arr = [NaN];
+document.write(arr.indexOf(NaN));  // -1 should be 0  but === doesen't work for NaN 
+document.write("<br>" + arr.includes(NaN));
+</script>

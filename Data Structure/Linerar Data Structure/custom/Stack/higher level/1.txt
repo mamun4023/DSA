@@ -1,0 +1,14 @@
+
+<script type="text/javascript">
+
+
+var Stack = new Array();
+Stack.push('A');
+Stack.push('B');
+Stack.push('C');
+Stack.push('D');
+
+document.write(Stack.pop() + "<br>");
+document.write(Stack.pop());
+
+</script>

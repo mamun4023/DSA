@@ -1,0 +1,18 @@
+<script type="text/javascript">
+	
+
+
+// in object reserve keywords are useable 
+
+let obj = {
+	for : 1,
+	let : 2,
+	return : 3
+};
+
+document.write(obj.for + "<br>");     // + or , can be used here
+document.write(obj.return)
+
+
+
+</script>

@@ -1,0 +1,17 @@
+<script type="text/javascript">
+	
+
+
+let obj = {
+	"2" : "Germany",
+	"3" : "Italy",
+	"4" : "Nepal",
+	"1" : "Bangladesh"      // you can use + to brake the order
+}
+
+// print in assending order
+for(let x in obj){
+	alert(x + " : "+ obj[x]);
+}
+
+</script>

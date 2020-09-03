@@ -1,0 +1,14 @@
+<script type="text/javascript">
+	
+
+
+let fruit = prompt("which fruit to buy","apple");
+
+let bag  = {};
+
+// take property name from the fruit variable 
+ bag[fruit] = 5;
+
+
+
+</script>

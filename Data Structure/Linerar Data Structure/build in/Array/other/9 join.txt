@@ -1,0 +1,11 @@
+
+<script type="text/javascript">
+
+
+let arr = ['I', 'like', 'programming'];
+ 
+let message = arr.join(' -- ');
+
+document.write(message);
+
+</script>

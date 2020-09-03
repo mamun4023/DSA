@@ -1,0 +1,11 @@
+
+<script type="text/javascript">
+
+let arr = ['A','B','C','D','E'];
+
+
+var dd = arr.slice(-2);  // copy  last 2 elements
+document.write(dd);
+
+
+</script>

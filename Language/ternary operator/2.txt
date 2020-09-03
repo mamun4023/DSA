@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+	
+ let a =10;
+ let b =  20; 
+   (a>b)?document.write('true'):document.write('false');
+
+
+</script>

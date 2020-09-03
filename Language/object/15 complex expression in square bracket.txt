@@ -1,0 +1,12 @@
+<script type="text/javascript">
+	
+
+
+
+	let fruit = 'apple';
+	let bag = {
+		[fruit + 'computer'] : 5  
+	};
+
+
+</script>

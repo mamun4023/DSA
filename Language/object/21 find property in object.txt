@@ -1,0 +1,11 @@
+<script type="text/javascript">
+	
+
+
+let obj = {
+	name : "tohid",
+	age : 30
+}
+
+document.write('age' in obj);
+</script>

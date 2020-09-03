@@ -1,0 +1,18 @@
+
+<script type="text/javascript">
+
+
+let arr  = [100,200,300];
+
+let obj = {
+	name : 'Tohid',
+	age : 20,
+	[Symbol.isConcatSpreadable] : true
+}
+
+var d = arr.concat(obj); 
+document.write(d);
+
+
+
+</script>

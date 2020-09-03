@@ -1,0 +1,9 @@
+<script type="text/javascript">
+
+
+var arr = [4,9,16,49];
+var x = arr.map(Math.sqrt);
+
+document.write(x);
+
+</script>

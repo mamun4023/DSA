@@ -1,0 +1,11 @@
+
+<script type="text/javascript">
+
+
+var arr = ['D','B','C','A'];
+
+arr.sort();
+
+document.write(arr);
+
+</script>

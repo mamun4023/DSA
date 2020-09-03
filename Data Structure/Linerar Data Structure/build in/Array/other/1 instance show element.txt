@@ -1,0 +1,8 @@
+
+<script type="text/javascript">
+
+
+
+['A','B','C'].forEach(alert);
+
+</script>

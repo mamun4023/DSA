@@ -1,0 +1,18 @@
+<script type="text/javascript">
+	
+
+
+let user = {
+	name : "Tohid",
+	age : 34
+}
+
+function sayHi(){
+	alert("Hello");
+}
+
+user.sayHi = sayHi;
+user.sayHi();  // Hello
+
+
+</script>

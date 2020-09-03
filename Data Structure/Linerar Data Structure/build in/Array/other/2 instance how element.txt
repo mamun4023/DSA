@@ -1,0 +1,11 @@
+
+
+<script type="text/javascript">
+
+
+
+['A','B','C'].forEach(item, index, array)=>{
+	alert(" ${item} is at ${index} ");
+}
+
+</script>

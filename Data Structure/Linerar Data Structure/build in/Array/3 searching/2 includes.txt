@@ -1,0 +1,7 @@
+
+<script type="text/javascript">
+
+let arr = ["A", "B", "C", "D"];
+document.write(arr.includes('C'));   // return true if data is included 
+
+</script>

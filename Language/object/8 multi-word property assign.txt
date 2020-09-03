@@ -1,0 +1,14 @@
+<script type="text/javascript">
+	
+
+let key = "like bird";
+
+
+// same as user['like birds'] = true
+
+user[key] = true;
+
+
+
+
+</script>

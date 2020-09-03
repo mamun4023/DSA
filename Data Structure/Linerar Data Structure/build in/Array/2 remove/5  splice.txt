@@ -1,0 +1,12 @@
+
+<script type="text/javascript">
+
+let arr = ['A','B','C'];
+
+// delete.arr['C']; not work
+
+var ddd = arr.splice(0,2); 
+document.write("removed elements : "+ ddd);
+
+
+</script>

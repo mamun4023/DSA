@@ -1,0 +1,15 @@
+
+<script type="text/javascript">
+
+
+let users = [
+	{id : 1, name : 'Tohid'},
+	{id : 2, name : 'Forid'},
+	{id : 3, name : 'Akram'}
+]
+
+let user  = users.filter(item => item.id < 2);
+document.write(user.name);
+
+
+</script>

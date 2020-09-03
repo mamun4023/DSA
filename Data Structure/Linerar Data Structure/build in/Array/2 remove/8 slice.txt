@@ -1,0 +1,11 @@
+
+<script type="text/javascript">
+
+let arr = ['A','B','C'];
+
+// same dd = arr;
+var dd = arr.slice();  // copy the array data
+document.write(dd);
+
+
+</script>

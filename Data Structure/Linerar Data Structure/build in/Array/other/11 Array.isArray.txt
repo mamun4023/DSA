@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+
+
+
+
+document.write(Array.isArray([]));
+
+</script>

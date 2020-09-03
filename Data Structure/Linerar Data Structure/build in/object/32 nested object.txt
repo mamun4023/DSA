@@ -1,0 +1,19 @@
+<script type="text/javascript">
+	
+
+
+ let user = {
+
+ 	name : "Jhon",
+ 	age : 34,
+ 	size : {
+ 		height : 120,
+ 		width : 50      
+ 	}
+ };
+
+ document.write(user.size.height);
+
+
+
+</script>

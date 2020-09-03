@@ -1,0 +1,14 @@
+
+<script type="text/javascript">
+
+
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var f = fruits.entries(); // make list 
+
+for(let x of f){
+	document.write(x + "<br>");
+}
+
+
+</script>

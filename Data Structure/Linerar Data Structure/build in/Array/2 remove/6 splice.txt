@@ -1,0 +1,12 @@
+
+<script type="text/javascript">
+
+let arr = ['A','B','C'];
+
+
+
+ arr.splice(0,0,"DD"); // adding item 
+document.write(arr);
+
+
+</script>

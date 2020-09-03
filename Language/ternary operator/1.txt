@@ -1,0 +1,14 @@
+
+<script type="text/javascript">
+	
+
+let age = prompt("enter an ange: ",30);
+
+let message = (age<=18)? ' you are child':
+              (age<=30)? ' you are young':
+              (age<=100)? ' you are old':
+              'age is out of range';
+
+alert(message);
+
+</script>

@@ -1,0 +1,16 @@
+<script>  
+var set = new Set();  
+set.add("jQuery");  
+set.add("AngularJS");  
+set.add("Bootstrap");  
+
+
+var itr = set[Symbol.iterator]();
+
+document.write(itr.next().value + "<br>");
+document.write(itr.next().value)
+
+
+
+
+ </script> 

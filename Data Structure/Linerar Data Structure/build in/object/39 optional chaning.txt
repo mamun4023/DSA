@@ -1,0 +1,13 @@
+<script>  
+
+
+let user1 = {
+	firstName : 'Tohid'
+};
+
+let user2 = null;
+
+let key = "firstName";
+alert(user1?.[key]);
+
+ </script> 

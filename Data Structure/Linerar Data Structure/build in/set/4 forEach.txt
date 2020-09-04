@@ -1,8 +1,8 @@
 <script>  
 var set = new Set(["jQuery","AngularJS","Bootstrap"]);  
 document.writeln("Fetching values :"+"<br>");  
-set.forEach(function display(value1, value2, set)   
+set.forEach(function display(item, index, set)   
 {  
-document.writeln('key[' + value1 + '] = ' + value2+"<br>");  
+document.writeln('key [' + item + '] = ' + index+" <br>");  
 })  
 </script> 

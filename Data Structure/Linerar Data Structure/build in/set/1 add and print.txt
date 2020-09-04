@@ -4,7 +4,8 @@
 	var set = new Set();
 	set.add('java');
 	set.add('java script');
-	set.add("python");
+	set.add("python").add("dd").add('CC');
+
 
 	for(let x of set){
 		document.writeln(x+ "<br>");

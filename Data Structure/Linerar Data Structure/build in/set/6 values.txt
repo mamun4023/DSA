@@ -3,7 +3,8 @@ var set = new Set();
 set.add("jQuery");  
 set.add("AngularJS");  
 set.add("Bootstrap");  
-var itr=set.values();  
+
+var itr = set.values();    // return iterator obj  
 document.writeln(itr.next().value+"<br>");  
 document.writeln(itr.next().value+"<br>");  
 document.writeln(itr.next().value);  

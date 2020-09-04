@@ -1,0 +1,11 @@
+<script>  
+var set = new Set();  
+set.add("jQuery");  
+set.add("AngularJS");  
+set.add("Bootstrap");  
+
+var itr = set.keys();    // return keys  
+
+console.log(itr);
+
+ </script> 

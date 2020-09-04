@@ -1,0 +1,14 @@
+<script>  
+
+ // this is constructor function 
+	function User(name){
+		this.name = name;
+		this.isAdmin = false;
+	}
+
+ // new object be created using new keyword
+	user = new User('Tohid');
+	document.write(user.name);
+
+
+ </script> 

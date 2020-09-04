@@ -1,8 +1,14 @@
-<script>  
-var set = new Set();  
-set.add("jQuery");  
-set.add("AngularJS");  
-set.add("Bootstrap");  
-document.writeln(set.has("Bootstrap"));
-   
-</script>  
+<script type="text/javascript">
+	
+
+	var set = new Set();
+	set.add('java');
+	set.add('java script');
+	set.add("python");
+
+
+
+  document.write(set.has('java'));
+
+
+</script>

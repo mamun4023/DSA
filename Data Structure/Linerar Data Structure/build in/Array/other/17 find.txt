@@ -1,0 +1,17 @@
+
+<input id="getAge" onkeyup="myFunction()" type="text" id="getAge" name="">
+<p id="demo"></p> 
+
+<script type="text/javascript">
+var ages = [3, 10, 18, 20];
+
+function checkAdult(age) {
+  return age => document.getElementById('getAge').value;
+}
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = ages.find(checkAdult);
+}
+
+
+ </script> 

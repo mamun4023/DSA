@@ -8,11 +8,14 @@ let user = {			// object
 	age : 30			// key = age and value = 30
 }
 
+
+
 user.name = "Tohid";      //change value 
 document.write(user.name);  // get property value 
-
-
+  
 
 
 
 </script>
+
+

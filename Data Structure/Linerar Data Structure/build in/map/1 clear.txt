@@ -5,7 +5,7 @@ var map1 = new Map();
 map1.set("name","tohid");
 map1.set("age", 23);
 
-map1.clear()    // remove all elements 
+map1.clear()    // clear all elements 
 console.log(map1); 
 
 

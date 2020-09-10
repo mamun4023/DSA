@@ -1,0 +1,9 @@
+<script type="text/javascript">
+	
+	var stack = []
+	stack.push(30);
+	stack.push(300);
+	stack.push(100);
+	stack.pop();
+	console.log(stack);
+</script>

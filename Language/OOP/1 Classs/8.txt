@@ -1,0 +1,13 @@
+<script type="text/javascript">
+
+
+class User{
+	name = "Jhon";
+	display(){
+		alert(this.name);
+	}
+}
+
+new User().display();
+
+</script>

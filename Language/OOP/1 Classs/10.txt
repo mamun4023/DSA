@@ -1,0 +1,13 @@
+<script type="text/javascript">
+
+
+class User{
+	name = prompt("Nmae: ");
+}
+
+let user = new User();
+alert(user.name);   // John
+
+
+</script>
+

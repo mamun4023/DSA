@@ -1,0 +1,27 @@
+<script type="text/javascript">
+
+
+
+
+
+
+let User = class{
+	display(){
+		alert("Welcome");
+	}
+};
+
+
+ user = new User();
+ user.display();
+
+
+
+
+
+
+
+
+
+</script>
+

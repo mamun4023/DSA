@@ -1,0 +1,10 @@
+<script type="text/javascript">
+	
+
+
+
+let s = Symbol("my Symbol");  
+console.log(s);
+
+
+</script>

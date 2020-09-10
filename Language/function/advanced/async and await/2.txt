@@ -1,0 +1,15 @@
+<script type="text/javascript">
+
+
+ async function myFunction(){
+ 	// xplicitly return a promise
+ 	return Promise.resolve(1);
+ }
+
+ myFunction().then(alert);  // console.log
+
+
+
+
+</script>
+

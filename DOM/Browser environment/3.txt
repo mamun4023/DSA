@@ -1,0 +1,13 @@
+
+<script type="text/javascript">
+	
+
+
+alert(location.href);
+if(confirm("go to facebook")){
+	location.href = "https://facebook.com";
+}
+
+
+
+</script>  

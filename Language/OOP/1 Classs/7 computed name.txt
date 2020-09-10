@@ -1,0 +1,15 @@
+<script type="text/javascript">
+
+
+class User{
+	['my' + 'Function']() {
+		alert("Hello");
+	}
+}
+
+
+new User().myFunction();
+
+
+</script>
+

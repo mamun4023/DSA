@@ -1,0 +1,24 @@
+<script type="text/javascript">
+
+
+
+function makeClass(phrase){
+	// declare a class and return it
+	return class{
+		display(){
+			alert(phrase);
+		};
+	};
+}
+
+// create a new class
+
+let User = makeClass("Hello");
+new User().display();
+
+
+
+
+
+</script>
+

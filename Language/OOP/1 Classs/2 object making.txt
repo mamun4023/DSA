@@ -1,0 +1,27 @@
+<script type="text/javascript">
+
+
+
+
+class MyClass {
+
+	constructor(name){
+		this.name = name;
+	}
+
+	display(){
+		alert(this.name);
+	}
+
+}
+
+// create object 
+let user = new  MyClass("Jhon");
+user.display();
+
+
+	
+
+
+</script>
+

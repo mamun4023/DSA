@@ -1,0 +1,17 @@
+<script type="text/javascript">
+
+
+class User{
+
+ 	name = "Jhon";
+}
+
+
+let user = new User();
+alert(user.name);   // Jhon
+alert(User.prototype.name);  // undefined
+
+
+
+</script>
+

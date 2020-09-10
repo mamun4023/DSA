@@ -1,0 +1,22 @@
+<script type="text/javascript">
+
+
+
+
+let User = class Myclass{
+	display(){
+		alert(Myclass);
+	}
+};
+
+
+new User().display();
+
+
+
+
+
+
+
+</script>
+

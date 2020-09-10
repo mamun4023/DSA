@@ -1,0 +1,15 @@
+<input id="id1" type="number" max="100">
+<button onclick="myFunction()">OK</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var txt = "";
+  // if the value is too large 
+  if (document.getElementById("id1").validity.rangeOverflow) {
+    txt = "Value too large";
+  }
+  document.getElementById("demo").innerHTML = txt;
+}
+</script>

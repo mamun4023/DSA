@@ -1,0 +1,13 @@
+<script type="text/javascript">
+	
+
+
+
+let firstName = Symbol('first name');
+let lastName = Symbol('last name');
+
+console.log(typeof firstName);
+
+
+
+</script>

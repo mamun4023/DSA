@@ -1,0 +1,14 @@
+<script type="text/javascript">
+
+
+ async function myFunction(){
+ 	return 1;
+ }
+
+ myFunction().then(alert);  // console.log
+
+
+
+
+</script>
+

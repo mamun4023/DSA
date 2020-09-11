@@ -1,0 +1,83 @@
+
+<script type="text/javascript">
+	
+  class Node{
+  	constructor(data){
+  		this.data = data;
+  		this.next = null;
+  	}
+  }
+
+
+  class Linked_list{
+  	constructor(){
+  		this.head = null;
+
+  	}
+
+  	insert(data){
+  		var node = new Node(data);
+  		if(this.head == null){
+  			this.head = node;
+  		}
+  		else{
+
+  			var traverse = this.head;
+  			while(traverse.next){
+
+  				traverse = traverse.next;
+  			}
+  			traverse.next = node;
+  		}
+  	}
+
+  	insertAt(element, index){
+  		if(index > 0 && index > this.size )
+  			return false;
+  		else{
+  			// create a new node
+  			var node = new Node(element);
+  			var curr, prev;
+  			curr = this.head;
+  			// addd the element to the first index
+  			if(index == 0){
+  				node.next = this.head;
+  				this.head = node;
+  			}else{
+  				curr = this.head;
+  				var it = 0;
+  			
+
+  			while(it < index){
+  				it++;
+  				prev = curr;
+  				curr = curr.next;
+  			}
+  			node.next = curr;
+  			prev.next = node;
+  		}
+  	}
+}
+
+  	print(){
+  		var traverse = this.head;
+  		while(traverse){
+  			console.log(traverse.data);
+  			traverse = traverse.next;
+  		}
+  	}
+
+  }
+
+
+obj = new Linked_list();
+obj.insert(10);
+obj.insert(20);
+obj.insert(30);
+obj.insert(40);
+obj.insertAt(100,2);
+
+obj.print();
+
+</script>
+

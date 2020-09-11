@@ -1,1 +1,1 @@
-https://adrianmejia.com/data-structures-for-beginners-trees-binary-search-tree-tutorial/
+https://www.geeksforgeeks.org/implementation-binary-search-tree-javascript/?ref=rp

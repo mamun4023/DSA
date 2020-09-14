@@ -1,0 +1,16 @@
+<script type="text/javascript">
+
+const people = {
+	printIntroduction : function()
+	{
+		console.log("name is : " +this.name)
+	}
+};
+
+const me = Object.create(people);
+me.name = 'Tohid';
+me.printIntroduction();
+
+
+
+</script>

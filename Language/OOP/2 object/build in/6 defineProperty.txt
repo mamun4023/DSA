@@ -1,0 +1,18 @@
+<script type="text/javascript">
+
+const obj1 = {};
+Object.defineProperty(obj1,'property1',{
+	value : 33,
+	value :334,
+	value : 3003,
+	value : 444
+});
+
+obj1.property1 = 117;
+// throws an error in strick mode
+
+console.log(obj1.property1);
+
+
+
+</script>

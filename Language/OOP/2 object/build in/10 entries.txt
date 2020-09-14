@@ -1,0 +1,11 @@
+<script type="text/javascript">
+
+	const obj = {
+		10 : 'arry',
+		31 : 'barry',
+		23 : 'carry'
+	};
+
+	console.log(Object.entries(obj)[2])
+
+</script>

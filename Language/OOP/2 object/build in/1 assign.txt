@@ -1,0 +1,22 @@
+<script type="text/javascript">
+
+
+ // copy source to destination
+const obj1 = {
+	 a : 1,
+	 b : 2,
+};
+
+const obj2 = {
+	g : 1,
+	h : 2,
+	i : 3
+};
+
+
+const obj3 = Object.assign(obj1, obj2);
+
+console.log(obj3);
+
+
+</script>

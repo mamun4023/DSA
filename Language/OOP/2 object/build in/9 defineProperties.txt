@@ -1,0 +1,21 @@
+<script type="text/javascript">
+
+
+const obj = {};
+Object.defineProperties(obj, {
+	property1: {
+		value : 123,
+		value : 333,
+		value : 344
+	},
+
+	property2: {
+		value : 100,
+		value : 200
+	}
+});
+
+console.log(obj.property1, obj.property2);
+
+
+</script>

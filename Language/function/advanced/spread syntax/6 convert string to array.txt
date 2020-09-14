@@ -1,0 +1,7 @@
+<script type="text/javascript">
+
+// convert string to an array
+let  str = "Hello";
+console.log([...str]);
+
+</script>   

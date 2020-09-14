@@ -1,4 +1,4 @@
-<script type="text/javascript">
+ <script type="text/javascript">
 	
 	let error  = new Error("message");
 	//or

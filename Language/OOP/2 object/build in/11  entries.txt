@@ -1,0 +1,11 @@
+<script type="text/javascript">
+
+const obj = {
+	1 : 'mac',
+	2 : 'sort',
+	3 : 'carry'
+};
+
+ console.log(Object.entries(obj)[2]);
+
+</script>

@@ -1,0 +1,7 @@
+<script type="text/javascript">
+
+// find max value into an array
+let arr = [2,3,4,5];
+alert(Math.max(arr));
+
+</script>   

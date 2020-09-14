@@ -1,0 +1,16 @@
+<script type="text/javascript">
+
+
+// the rest parameters must be in last 
+function showName(firstName, lastName, ...titles){
+	alert(firstName + "  " + lastName);
+
+	// the rest go into title 
+	alert(titles[0]);
+	alert(titles[1]);
+	alert(titles.length);
+}   
+
+showName('Tohid', 'Korim', 'Ahsan', 'Kobir');
+
+</script>   

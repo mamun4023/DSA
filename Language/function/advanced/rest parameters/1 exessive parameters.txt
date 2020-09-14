@@ -1,0 +1,12 @@
+<script type="text/javascript">
+
+function Add(a, b){
+	return a + b;
+}
+
+// it can take any number of argument but
+// only take first two 
+var sum = Add(1,2,3,4,5);
+console.log(sum);
+
+</script>

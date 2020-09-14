@@ -1,0 +1,10 @@
+<script type="text/javascript">
+
+let arr1 = [2,3,4,5];
+let arr2 = [10,2,100];
+
+// merging multiple array using spread 
+let merge = [...arr1, ...arr2];
+console.log(merge);
+
+</script>   

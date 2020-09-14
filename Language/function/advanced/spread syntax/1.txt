@@ -1,0 +1,7 @@
+<script type="text/javascript">
+
+// find max value
+alert(Math.max(1,2,3,4,5));
+
+
+</script>   

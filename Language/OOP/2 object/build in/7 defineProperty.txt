@@ -1,0 +1,14 @@
+<script type="text/javascript">
+
+	const obj1 = {};
+	Object.defineProperty(obj1, 'property1', {
+		value : 2,
+		value : 5,
+		value : 33
+	});
+
+	obj1.property1;
+	console.log(obj1.property1);
+
+
+</script>

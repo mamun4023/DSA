@@ -1,0 +1,8 @@
+
+<script type="text/javascript">
+
+// return asci value 
+var str = "A"
+console.log(str.charCodeAt(0));
+    
+</script>

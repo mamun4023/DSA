@@ -1,0 +1,11 @@
+
+<script type="text/javascript">
+
+
+var str = "Hello world";
+
+var result = str.sup();
+console.log(result);
+
+
+</script>

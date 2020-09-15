@@ -1,0 +1,14 @@
+
+<script type="text/javascript">
+	
+
+// case sensitive 
+var str = "Please visit Microsoft at usa Microsoft";
+var n = str.replace('microsoft', 'w3school');
+
+console.log(n);
+
+
+
+
+</script>

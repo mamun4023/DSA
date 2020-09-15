@@ -1,0 +1,13 @@
+
+<script type="text/javascript">
+
+
+// return 0 if matched 
+ var str1 = 'ab';
+ var str2 = 'ab';
+ var n = str1.localeCompare(str2);
+console.log(n);
+
+
+
+</script>

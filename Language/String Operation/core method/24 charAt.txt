@@ -1,0 +1,11 @@
+
+<script type="text/javascript">
+	
+
+// return character with index value 
+var str = "HELLO world";
+console.log(str.charAt(1));
+
+
+    
+</script>

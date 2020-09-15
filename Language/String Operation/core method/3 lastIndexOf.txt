@@ -1,0 +1,10 @@
+
+<script type="text/javascript">
+	
+// return last in into a string
+var string = "I like in programming in javascript";
+var result = string.lastIndexOf('in');
+console.log(result);
+
+
+</script>

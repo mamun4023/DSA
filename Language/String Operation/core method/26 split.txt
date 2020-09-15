@@ -1,0 +1,13 @@
+
+<script type="text/javascript">
+
+
+var txt = "a,b,c,d,e";   // string
+console.log(txt);
+var d = txt.split(",");  //  convert to array
+console.log(d);
+
+
+
+    
+</script>

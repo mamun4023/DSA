@@ -1,0 +1,12 @@
+
+
+<script type="text/javascript">
+
+
+var str = "Hello world, welcome to the universe.";
+var n = str.startsWith("Hello");
+console.log(n);
+
+
+
+</script>

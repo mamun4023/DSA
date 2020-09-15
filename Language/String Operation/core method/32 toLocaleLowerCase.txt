@@ -1,0 +1,10 @@
+
+script type=textjavascript
+
+
+var str = HelLo World;
+var res = str.toLocaleLowerCase();
+console.log(res);
+
+
+script

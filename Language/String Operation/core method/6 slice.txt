@@ -1,0 +1,11 @@
+
+<script type="text/javascript">
+	
+
+var str = "Apple, Banana, Orange";
+var res = str.slice(7,13);  //(start, end) 
+console.log(res);
+
+
+
+</script>

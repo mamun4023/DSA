@@ -1,0 +1,11 @@
+
+<script type="text/javascript">
+
+
+// case insensitive
+var str = "The rain in spain stays mainly in the plain";
+var res = str.match(/IN/gi);
+console.log(res);
+
+
+</script>

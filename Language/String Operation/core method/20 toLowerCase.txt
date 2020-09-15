@@ -1,0 +1,10 @@
+
+<script type="text/javascript">
+	
+
+
+var text1 = "HELLO WORLD";
+var text2 = text1.toLowerCase();
+console.log(text2);
+
+</script>

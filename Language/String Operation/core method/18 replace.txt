@@ -1,0 +1,14 @@
+
+<script type="text/javascript">
+	
+
+// make non case sensitive use /ig flag
+var str = "Please visit Microsoft at usa Microsoft";
+var n = str.replace(/microsoft/ig, 'w3school');
+
+console.log(n);
+
+
+
+
+</script>

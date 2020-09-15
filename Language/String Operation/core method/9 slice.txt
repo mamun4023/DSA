@@ -1,0 +1,11 @@
+
+<script type="text/javascript">
+	
+
+var str = "Apple, Banana, Kiwi";
+var res = str.slice(-12);   // start from negative
+console.log(res);
+
+
+
+</script>

@@ -1,0 +1,10 @@
+
+<script type="text/javascript">
+	
+// return index 
+var string = "I like in programming in javascript";
+var result = string.search('in');
+console.log(result);
+
+
+</script>

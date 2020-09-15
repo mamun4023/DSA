@@ -1,0 +1,11 @@
+
+<script type="text/javascript">
+
+
+// match in 
+var str = "The rain in spain stays mainly in the plain";
+var res = str.match(/in/g);
+console.log(res);
+
+
+</script>

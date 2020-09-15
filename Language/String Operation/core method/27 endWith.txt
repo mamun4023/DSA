@@ -1,0 +1,12 @@
+
+<script type="text/javascript">
+
+// check whether end with given data
+var str = "Hello world, welcome to the universe.";
+var n = str.endsWith("universe.");
+
+console.log(n);
+
+
+    
+</script>

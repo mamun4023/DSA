@@ -1,0 +1,7 @@
+<script type="text/javascript">
+
+
+// "Not-a-Number" value
+console.log(Number.NaN)
+
+</script>

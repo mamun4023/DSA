@@ -1,0 +1,11 @@
+<script type="text/javascript">
+
+
+
+// Returns the arctangent of the quotient of its arguments
+var e =  Math.atan2(8, 4);
+console.log(e);
+
+
+
+</script>

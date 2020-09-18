@@ -1,0 +1,11 @@
+<script type="text/javascript">
+
+
+
+//Return the base-10 logarithm of E:
+var e =  Math.LOG10E;
+console.log(e);
+
+
+
+</script>

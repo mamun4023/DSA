@@ -1,0 +1,11 @@
+<script type="text/javascript">
+
+
+
+// Return the natural logarithm of the number "2"
+var e = Math.log(2);
+console.log(e);
+
+
+
+</script>

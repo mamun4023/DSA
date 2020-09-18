@@ -1,0 +1,12 @@
+<script type="text/javascript">
+
+
+
+var str = "Is this his";
+//  is at the begining of this string
+var pttr =  /^Is/g;
+var  result = str.match(pttr);
+
+console.log(result);
+
+</script>

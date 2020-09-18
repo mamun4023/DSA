@@ -1,0 +1,10 @@
+<script type="text/javascript">
+
+// itaration 
+var cars = ['BMW', 'VOLVO', 'MINI'];
+
+for(x of cars){
+	console.log(x);
+}
+
+</script>

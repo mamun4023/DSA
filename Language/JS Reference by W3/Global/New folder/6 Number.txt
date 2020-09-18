@@ -1,0 +1,13 @@
+<script type="text/javascript">
+
+
+var a = "10";
+var b = "10";
+
+// convert to number
+var c = Number(a) + Number(b);
+console.log(c);
+
+
+
+</script>

@@ -1,0 +1,12 @@
+<script type="text/javascript">
+
+
+
+var str = "Is this  there is all";
+// global search for "is" followed by " all"
+var pttr =  /is(?= all)/g;
+var  result = str.match(pttr);
+
+console.log(result);
+
+</script>

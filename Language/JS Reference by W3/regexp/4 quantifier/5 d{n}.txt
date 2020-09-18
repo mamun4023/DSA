@@ -1,0 +1,13 @@
+<script type="text/javascript">
+
+
+
+var str = "100, 1000 or 0000 10000 000?";
+
+// at least four digit
+var pttr =  /\d{4}/g;
+var  result = str.match(pttr);
+
+console.log(result);
+
+</script>

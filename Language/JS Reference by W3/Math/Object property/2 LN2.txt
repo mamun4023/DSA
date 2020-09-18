@@ -1,0 +1,11 @@
+<script type="text/javascript">
+
+
+
+//eturns the natural logarithm of 2, approximately 0.693
+var e = Math.LN2;
+console.log(e);
+
+
+
+</script>

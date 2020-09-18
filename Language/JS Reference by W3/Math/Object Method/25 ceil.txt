@@ -1,0 +1,12 @@
+<script type="text/javascript">
+
+
+
+// Returns x, rounded upwards to the nearest integer
+
+var e = Math.ceil(1.4)
+console.log(e);
+
+
+
+</script>

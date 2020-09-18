@@ -1,0 +1,11 @@
+<script type="text/javascript">
+
+
+
+// Return the arctangent of a specified number:
+var e =  Math.atan(2);
+console.log(e);
+
+
+
+</script>

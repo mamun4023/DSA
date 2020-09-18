@@ -1,0 +1,8 @@
+<script type="text/javascript">
+
+
+// Formats a number with x numbers of digits after the decimal point
+var num = 5.56789;
+var n = num.toFixed(2);
+console.log(n);
+</script>

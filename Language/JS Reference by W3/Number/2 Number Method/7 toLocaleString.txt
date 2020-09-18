@@ -1,0 +1,7 @@
+<script type="text/javascript">
+
+
+// Converts a number into a string, based on the locale settings
+var num = new Number(1000000).toLocaleString("fi-FI");
+console.log(num);
+</script>

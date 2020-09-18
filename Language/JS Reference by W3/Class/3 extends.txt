@@ -1,0 +1,24 @@
+<script type="text/javascript">
+
+
+
+class Car{
+	show(){
+		console.log("Hello world");
+	}
+
+
+}
+
+
+class Bus extends Car{
+	display(){
+		console.log("second class");
+	}
+}
+
+
+var obj = new Bus();
+obj.show();
+
+</script>

@@ -1,0 +1,12 @@
+<script type="text/javascript">
+
+
+
+//Return the cubic root of a number:
+
+var e = Math.cbrt(125);
+console.log(e);
+
+
+
+</script>

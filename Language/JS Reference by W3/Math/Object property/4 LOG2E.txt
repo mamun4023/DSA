@@ -1,0 +1,8 @@
+
+//Return the base-2 logarithm of E:
+var e =  Math.LOG2E;
+console.log(e);
+
+
+
+</script>

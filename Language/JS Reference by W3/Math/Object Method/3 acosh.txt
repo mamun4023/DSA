@@ -1,0 +1,11 @@
+<script type="text/javascript">
+
+
+
+//Return the hyperbolic arccosine of a number:
+var e =  Math.acosh(2);
+console.log(e);
+
+
+
+</script>

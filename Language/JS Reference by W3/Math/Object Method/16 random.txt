@@ -1,0 +1,11 @@
+<script type="text/javascript">
+
+
+
+//  Return a random number between 0 (inclusive) and 1 (exclusive):
+var e = Math.random();
+console.log(e);
+
+
+
+</script>

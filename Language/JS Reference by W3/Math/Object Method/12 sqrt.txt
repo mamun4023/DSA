@@ -1,0 +1,11 @@
+<script type="text/javascript">
+
+
+
+//  Return the square root of a number:
+var e = Math.sqrt(9);
+console.log(e);
+
+
+
+</script>

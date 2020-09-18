@@ -1,0 +1,14 @@
+<script type="text/javascript">
+
+
+
+var str = "Programming is the best choise of making product"
+
+// case insensitive 
+var pttr = /programming/i;
+var  result = str.match(pttr);
+
+console.log(result);
+
+
+</script>

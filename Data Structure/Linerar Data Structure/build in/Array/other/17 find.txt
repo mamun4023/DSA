@@ -1,5 +1,5 @@
 
-<input id="getAge" onkeyup="myFunction()" type="text" id="getAge" name="">
+<input id="getAge" onkeyup="myFunction()" type="text" >
 <p id="demo"></p> 
 
 <script type="text/javascript">

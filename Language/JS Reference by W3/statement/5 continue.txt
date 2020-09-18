@@ -1,0 +1,9 @@
+<script type="text/javascript">
+	
+ for(let i = 0; i < 5; i++){
+ 	if(i ===3){
+ 		continue;     // continue without 3 
+ 	}
+ 	console.log(i);
+ }
+</script>

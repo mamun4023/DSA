@@ -1,11 +1,13 @@
 
-
 <script type="text/javascript">
 
 
 
-['A','B','C'].forEach(item, index, array)=>{
-	alert(" ${item} is at ${index} ");
-}
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+fruits.forEach((fruit)=> {
+	console.log(fruit);
+});
+
 
 </script>

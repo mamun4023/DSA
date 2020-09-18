@@ -1,0 +1,12 @@
+<script type="text/javascript">
+
+
+
+// Return the cosine of a number
+
+var e = Math.cos(3);
+console.log(e);
+
+
+
+</script>

@@ -1,0 +1,11 @@
+<script type="text/javascript">
+
+
+
+//Returns the square root of 2 (approx. 1.414)
+var e =  Math.SQRT2;
+console.log(e);
+
+
+
+</script>

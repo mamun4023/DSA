@@ -1,0 +1,12 @@
+
+<script type="text/javascript">
+
+
+
+//he E property returns the Euler's number and the base of natural logarithms, approximately 2.718.
+var e = Math.E;
+console.log(e);
+
+
+
+</script>

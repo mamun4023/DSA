@@ -1,0 +1,11 @@
+<script type="text/javascript">
+
+
+
+//returns the natural logarithm of 10,
+var e = Math.LN10;
+console.log(e);
+
+
+
+</script>

@@ -1,0 +1,12 @@
+<script type="text/javascript">
+
+
+
+// Return Ex, where x is 1
+
+var e = Math.exp(1);
+console.log(e);
+
+
+
+</script>

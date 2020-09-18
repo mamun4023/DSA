@@ -1,0 +1,7 @@
+var a = isFinite(123) + "<br>";
+var b = isFinite(-1.23) + "<br>";
+var c = isFinite(5-2) + "<br>";
+var d = isFinite(0) + "<br>";
+var e = isFinite("123") + "<br>";
+var f = isFinite("Hello") + "<br>";
+var g = isFinite("2005/12/12");

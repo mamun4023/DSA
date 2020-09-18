@@ -1,0 +1,11 @@
+<script type="text/javascript">
+
+
+
+//Returns PI (approx. 3.14)
+var e =  Math.PI;;
+console.log(e);
+
+
+
+</script>

@@ -1,0 +1,13 @@
+<script type="text/javascript">
+
+var person = {
+	name : 'Tohid',
+	age : 23
+}
+// loop through the object property
+for( i in person){
+	console.log(i, " -> ", person[i]);
+}
+
+
+</script>

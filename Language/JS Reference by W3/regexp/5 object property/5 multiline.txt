@@ -1,0 +1,8 @@
+<script type="text/javascript">
+
+
+var str = "Visit W3Schools!";
+var patt1 = /W3S/gi; // "g" and "i" is set, "m" is not.
+var res = patt1.multiline;
+console.log(res);
+</script>

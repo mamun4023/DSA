@@ -1,0 +1,12 @@
+<script type="text/javascript">
+
+
+
+var str = "Is this his";
+//  is at the end of this string
+var pttr =  /is$/g;
+var  result = str.match(pttr);
+
+console.log(result);
+
+</script>

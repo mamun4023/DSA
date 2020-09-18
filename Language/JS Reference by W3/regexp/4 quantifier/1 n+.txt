@@ -1,0 +1,13 @@
+<script type="text/javascript">
+
+
+
+var str = "Visit W3Schools. Hello World!";
+
+// at least one "o"
+var pttr =/o+/g;
+var  result = str.match(pttr);
+
+console.log(result);
+
+</script>

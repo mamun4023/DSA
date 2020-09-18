@@ -1,0 +1,14 @@
+<script type="text/javascript">
+
+
+
+var str = "HELLO, LOOK AT YOU";
+
+//  find word at the begging or word...
+var pttr = /\bLO/g;
+var  result = str.match(pttr);
+
+console.log(result);
+
+
+</script>

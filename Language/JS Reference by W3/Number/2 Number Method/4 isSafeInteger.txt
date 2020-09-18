@@ -1,0 +1,12 @@
+Number.isSafeInteger(123) //true
+Number.isSafeInteger(-123) //true
+Number.isSafeInteger(5-2) //true
+Number.isSafeInteger(0) //true
+Number.isSafeInteger(0.5) //false
+Number.isSafeInteger(Math.pow(2, 53)) //false
+Number.isSafeInteger(Math.pow(2, 53) - 1) //true
+Number.isSafeInteger('123') //false
+Number.isSafeInteger(false) //false
+Number.isSafeInteger(Infinity) //false
+Number.isSafeInteger(-Infinity) //false
+Number.isSafeInteger(0 / 0) //false

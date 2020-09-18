@@ -1,0 +1,11 @@
+<script type="text/javascript">
+
+
+
+// Represents negative infinity (returned on overflow) 
+
+console.log(Number.NEGATIVE_INFINITY);
+
+
+
+</script>

@@ -1,0 +1,9 @@
+<script type="text/javascript">
+
+
+  var str = "Visit W3Schools!";
+  var patt1 = /W3S/g;
+  var res = patt1.global;
+
+  console.log(res);
+</script>

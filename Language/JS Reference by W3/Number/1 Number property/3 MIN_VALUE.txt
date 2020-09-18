@@ -1,0 +1,12 @@
+<script type="text/javascript">
+
+
+
+// return the largest possible number 
+
+var num = 100;
+console.log(num.MIN_VALUE);
+
+
+
+</script>

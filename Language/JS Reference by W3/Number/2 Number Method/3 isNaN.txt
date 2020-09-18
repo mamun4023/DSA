@@ -1,0 +1,13 @@
+Number.isNaN(123) //false
+Number.isNaN(-1.23) //false
+Number.isNaN(5-2) //false
+Number.isNaN(0) //false
+Number.isNaN('123') //false
+Number.isNaN('Hello') //false
+Number.isNaN('2005/12/12') //false
+Number.isNaN('') //false
+Number.isNaN(true) //false
+Number.isNaN(undefined) //false
+Number.isNaN('NaN') //false
+Number.isNaN(NaN) //true
+Number.isNaN(0 / 0) //true

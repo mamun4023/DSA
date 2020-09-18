@@ -1,0 +1,13 @@
+<script type="text/javascript">
+
+
+
+// return the function that created the numbers's prototype
+
+var num = 12;
+console.log(num.constructor);
+
+
+
+
+</script>

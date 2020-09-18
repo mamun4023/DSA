@@ -1,0 +1,14 @@
+<script type="text/javascript">
+
+
+
+var str = "Give 100%!";
+
+// return only non digit 
+var pttr = /\D/g;
+var  result = str.match(pttr);
+
+console.log(result);
+
+
+</script>

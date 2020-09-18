@@ -1,0 +1,11 @@
+<script type="text/javascript">
+
+
+
+//Returns the square root of 1/2 (approx. 0.707)
+var e =  Math.SQRT1_2;
+console.log(e);
+
+
+
+</script>

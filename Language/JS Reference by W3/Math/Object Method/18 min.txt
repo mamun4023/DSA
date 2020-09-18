@@ -1,0 +1,11 @@
+<script type="text/javascript">
+
+
+
+// Returns the number with the lowest value
+var e = Math.min(5, 10,3, 0);
+console.log(e);
+
+
+
+</script>

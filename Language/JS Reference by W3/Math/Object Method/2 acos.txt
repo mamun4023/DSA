@@ -1,0 +1,11 @@
+<script type="text/javascript">
+
+
+
+//Return the arccosine of a number:
+var e =  Math.acos(0.5);
+console.log(e);
+
+
+
+</script>

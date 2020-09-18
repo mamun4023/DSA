@@ -1,0 +1,14 @@
+<script type="text/javascript">
+
+
+
+var str = "Give 100%!";
+
+// return only white space
+var pttr = /\s/g;
+var  result = str.match(pttr);
+
+console.log(result);
+
+
+</script>

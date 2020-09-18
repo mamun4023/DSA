@@ -1,0 +1,11 @@
+<script type="text/javascript">
+
+
+
+// Returns the tangent of an angle
+var e = Math.tan(1);
+console.log(e);
+
+
+
+</script>

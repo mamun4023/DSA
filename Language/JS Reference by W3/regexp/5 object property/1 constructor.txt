@@ -1,0 +1,10 @@
+<script type="text/javascript">
+
+
+
+var patt = new RegExp("Hello World", "g");
+var res = patt.constructor;
+
+console.log(res);
+
+</script>

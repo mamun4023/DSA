@@ -1,0 +1,28 @@
+<script type="text/javascript">
+
+
+
+
+
+function maxProduct(arr){
+var mul = 1;
+var result = 1;
+
+for(var i = 0; i < arr.length; i++){
+	mul = mul * arr[i];
+	if(result >= mul)
+		mul = result;
+	else
+		result = mul;
+}
+
+console.log(result);
+}
+
+
+var arr = [];
+maxProduct(arr);
+
+
+
+</script>

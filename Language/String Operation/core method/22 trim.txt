@@ -3,8 +3,13 @@
 	
 
 
-var str = "       Hello         World!        ";
-document.write(str.trim());
+// remove space from end of string
+var str = "   Hello        world   "
 
-    
+var result = str.trim();
+console.log(result);
+
+
+
+
 </script>

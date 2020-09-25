@@ -1,0 +1,26 @@
+<script type="text/javascript">
+	
+	
+// this is a greedy method
+	function findMin(V){
+		var notes = [1,2,5,10,20,50,100,500,1000];
+		var ans = []
+
+		for(let i = notes.length-1; i >= 0; i--){
+			
+			while(V >= notes[i]){
+				V = V - notes[i];
+				ans.push(notes[i]);
+			}
+		}
+
+		 for( var k = 0; k < ans.length; k++)
+		{
+		   document.write(ans[k], " TK  ","<br>");
+	    }
+
+	}
+
+findMin(3);
+
+</script>

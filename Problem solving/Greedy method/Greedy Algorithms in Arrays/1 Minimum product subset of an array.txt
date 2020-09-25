@@ -1,0 +1,28 @@
+<script type="text/javascript">
+	
+
+function multi(arr){
+var mul = 1;
+var zero = 0;
+for(var i = 0; i<arr.length; i++){
+	if(arr[i] === 0)
+	{	
+		zero++;
+		continue;
+	}
+	mul = mul * arr[i];
+}
+
+if(arr.length === zero)
+   console.log(0);
+else
+  console.log(mul);
+
+}
+
+
+// function call
+var arr = [0,-1];
+multi(arr);
+
+</script>

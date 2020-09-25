@@ -1,0 +1,86 @@
+
+<script type="text/javascript">
+
+
+
+
+class Graph{
+	constructor(noOfVertics){
+		this.noOfVertics = noOfVertics;
+		this.adjList = new Map();
+	}
+
+	addVertex(v){
+		this.adjList.set(v, []);
+	}
+
+	addEdge(v, w){
+		this.adjList.get(v).push(w);
+		this.adjList.get(w).push(v);
+	}
+
+
+  print(){
+  	var get_key = this.adjList.keys();
+  	
+  	for(let i  of get_key){
+  		var get_value = this.adjList.get(i);
+  		var result = "";
+  		for(let j of get_value){
+  			result = result + j;
+  		}
+  		console.log( i+ " -> " +result);
+  	}	
+  }	
+
+
+
+// BFS traversal Algorithm 
+
+ BFS(startNode){
+ 	var visited = {};
+ 	var Queue = [];
+ 	visited[startNode] = true;
+ 	Queue.push(startNode);
+
+ 	while(Queue.length > 0)
+ 	{
+ 		var getElement = Queue.shift();
+ 		document.write(getElement);
+
+ 		var get_list = this.adjList.get(getElement);
+
+ 		for(let i in get_list){
+ 			var neigh = get_list[i];
+ 			if(!visited[neigh]){
+ 				visited[neigh] = true;
+ 				Queue.push(neigh);
+ 			}
+ 		}
+ 	}
+ }
+}   
+
+
+obj = new Graph(6);
+var vertics = ['A','B','C','D','E','F'];
+
+for(var i = 0; i<vertics.length; i++){
+	obj.addVertex(vertics[i]);
+}
+
+obj.addEdge('A', 'B'); 
+obj.addEdge('A', 'D'); 
+obj.addEdge('A', 'E'); 
+obj.addEdge('B', 'C'); 
+obj.addEdge('D', 'E'); 
+obj.addEdge('E', 'F'); 
+obj.addEdge('E', 'C'); 
+obj.addEdge('C', 'F'); 
+
+obj.print();
+
+obj.BFS('A');
+// A B D E C F
+
+</script>

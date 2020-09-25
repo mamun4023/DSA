@@ -1,4 +1,5 @@
 https://w3school.com
+https://www.javascripttutorial.net/
 https://javascript.info
 
 refernce :

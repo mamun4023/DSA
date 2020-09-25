@@ -2,9 +2,14 @@
 <script type="text/javascript">
 	
 
+	
+
 
 var text1 = "HELLO WORLD";
-var text2 = text1.toLowerCase();
-console.log(text2);
+var text2 = " in dream";
+var add = text1.concat(text2);
+console.log(add);
+
+
 
 </script>

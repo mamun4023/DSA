@@ -1,0 +1,49 @@
+<script type="text/javascript">
+	
+
+// declare a matrix
+var arr = [
+		[0,0,0,0,0,0],
+		[0,0,0,0,0,0],
+		[0,0,0,0,0,0],
+		[0,0,0,0,0,0],
+		[0,0,0,0,0,0],
+		[0,0,0,0,0,0]
+
+	];
+
+
+ function display(){
+ 	for(var i=0; i<arr.length; i++){
+ 		for(var j=0; j<arr.length; j++){
+ 			document.write(arr[i][j], " ");
+ 		}
+ 		document.write("<br>");
+ 	}
+ }
+
+ 
+
+// adding edge 
+
+ function addEdge(u, v){
+ 	arr[u][v] = 1;
+ 	arr[v][u] = 1;
+ }
+
+ addEdge(0,4);
+ addEdge(0,3);
+ addEdge(1,2);
+ addEdge(1,4);
+ addEdge(1,5);
+ addEdge(2,3);
+ addEdge(2,5);
+ addEdge(5,3);
+ addEdge(5,4);
+
+
+document.write("Adjacent Mattix are :", "<br>") 
+display();
+
+
+</script>

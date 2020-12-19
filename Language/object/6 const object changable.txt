@@ -2,7 +2,7 @@
 	
 
 
-// const object is not changable 
+// const object is not changeable 
 
  
 const user = {			

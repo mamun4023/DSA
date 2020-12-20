@@ -1,5 +1,5 @@
 
-<script type="text/javascript">
+
 	function func(...input){
 		let sum = 0;
 		for(let i of input)
@@ -12,5 +12,3 @@
 	console.log(func(1,2,3,4));
 	console.log(func(1,2,3,4,5));
 
-
-</script>

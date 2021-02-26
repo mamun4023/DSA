@@ -1,46 +1,55 @@
+
 <script type="text/javascript">
-	
+  
 
-	// create a node
-
-	class Node{
-		constructor(data){
-			this.data = data;
-			this.next = null;
-		}
-	}
+class Node{
+  constructor(element){
+    this.element = element;
+    this.next = null;
+  }
+}
 
 
-	class Linked_list{
-            constructor(){
-            	this.head = null;  
-            }
-		
+class Linked_list{
+  constructor(){
+    this.head = null;
+  }
 
-		// add data at first of linked list
-		insert(data){
-		
-			var after_head = this.head;
-			this.head = new Node(data);
-			this.head.next = after_head;
-		}
 
-		// print Linked list
 
-		print(){
-			var traverse = this.head;
-			while(traverse){
-				document.write(traverse.data +" ");
-				traverse= traverse.next;
-			}
-		}
-	}
+  insert(element){
+    var node = new Node(element);
 
- obj = new Linked_list();
- obj.insert(10);
- obj.insert(30);
- obj.insert(100);
- obj.print();
+    var traverse = this.head;
+
+    if(this.head == null)
+      this.head = node;
+    else{
+       node.next = this.head;
+       this.head = node;
+    }
+  }
+
+  print(){
+    var traverse = this.head;
+    while(traverse){
+      console.log(traverse.element);
+      traverse = traverse.next;
+      
+    }
+  }
+}
+
+
+
+
+
+var obj = new Linked_list();
+obj.insert(10);
+obj.insert(1000);
+obj.insert(4000);
+
+obj.print();
 
 
 

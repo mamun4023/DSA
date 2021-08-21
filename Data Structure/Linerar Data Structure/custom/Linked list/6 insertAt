@@ -1,0 +1,63 @@
+ 
+ class Node{
+    constructor(data){
+      this.data = data;
+      this.next = null;
+    }
+  }
+
+
+  class Linked_list{
+    constructor(){
+      this.head = null;
+
+    }
+
+    insert(data){
+      var node = new Node(data);
+      if(this.head == null){
+        this.head = node;
+
+      }
+      else{
+
+        var traverse = this.head;
+        while(traverse.next){
+
+          traverse = traverse.next;
+        }
+        traverse.next = node;
+      }
+    }
+
+    insertAt(element, pos){
+      let node = new Node(element);
+      let traverse = this.head;
+      let i = 1;
+      while(traverse && i<pos-1){
+        traverse = traverse.next;
+        i++
+      }
+      let next_node = traverse.next
+      traverse.next = node;
+      node.next = next_node
+    }
+
+    print(){
+      var traverse = this.head;
+      while(traverse){
+        document.write(traverse.data+ " ")
+        traverse = traverse.next;
+      }
+      
+    }
+  }
+
+
+obj = new Linked_list();
+obj.insert(10);
+obj.insert(20)
+obj.insert(30)
+obj.insert(40)
+obj.insertAt(100,5);
+obj.print();

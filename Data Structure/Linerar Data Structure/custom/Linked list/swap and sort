@@ -1,0 +1,101 @@
+// node structure
+class Node{
+  constructor(element){
+    this.element = element;
+    this.next = null;
+  }
+}
+
+
+class Linked_list{
+  constructor(){
+    this.head = null;
+  }
+
+
+// add element at first
+add(element){
+  var node = new Node(element);
+  if(this.head == null){
+    this.head = node;
+  }else{
+    let traverse = this.head;
+    while(traverse.next){
+      traverse = traverse.next;
+    }
+    traverse.next = node;
+  }
+}
+
+
+  // bubble Sorting
+  sort(){
+    let traverse_i = this.head;
+    let traverse_j = this.head;
+    while(traverse_i){
+      traverse_j = this.head;
+      while(traverse_j){
+             var after = traverse_j.next;
+
+               if(traverse_j.element > after.element){
+                let temp = traverse_j.element;
+                traverse_j.element = after.element;
+                after.element = temp;
+               }
+              
+             if(after.next === null){
+              break;
+           }
+          traverse_j = traverse_j.next;
+    }
+    traverse_i = traverse_i.next;
+  }
+}
+
+
+// swapping
+swap(){
+  let traverse = this.head;
+  while(traverse){
+      console.log("Before swap")
+      console.log(traverse.element)
+      console.log(traverse.next.element)
+
+      // after swap
+      console.log("after swap")
+      var temp = traverse.element;
+      traverse.element = traverse.next.element;
+      traverse.next.element = temp;
+      console.log(traverse.element);
+      console.log(traverse.next.element)
+
+      break
+    traverse = traverse.next;
+  }
+}
+
+
+
+
+  // display the node
+   display(){
+    let traverse = this.head;
+    while(traverse){
+      document.write(traverse.element+ " ");
+      traverse = traverse.next;
+    }
+   }
+}
+
+
+
+var obj = new Linked_list();
+obj.add(50);
+obj.add(20);
+obj.add(30);
+obj.add(3);
+obj.sort();
+
+// obj.swap();
+
+obj.display();

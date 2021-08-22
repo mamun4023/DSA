@@ -1,0 +1,11 @@
+  // searching linear search
+  search(data){
+    let traverse = this.head;
+    while(traverse){
+
+        if(data == traverse.data){
+           console.log("found")
+        }
+      traverse = traverse.next;
+    }
+  }

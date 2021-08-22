@@ -1,0 +1,51 @@
+  class Node{
+    constructor(value){
+      this.value = value;
+      this.next = null;
+      this.prev = null;
+    }
+  }
+
+
+  class Doubly_linkedList{
+    constructor(){
+      this.length = 0;
+      this.head = null;
+      this.tail = null;
+    }
+
+
+    add(data){
+      var node = new Node(data);
+      if(this.head === null){
+        this.head = node;
+        this.length++;
+      }else {
+        let traverse = this.head;
+        while(traverse.next){
+          traverse = traverse.next;
+        }
+        traverse.next = node;
+        node.prev = traverse;
+        this.length++;
+    }
+  }
+
+    // display
+    display(){
+      let traverse = this.head;
+      while(traverse){
+        console.log(traverse);
+        document.write(traverse.value+ " ")
+        traverse = traverse.next;
+      }
+    }
+  }
+
+
+var obj = new Doubly_linkedList();
+obj.add(10);
+obj.add(20);
+obj.add(100);
+obj.add(100);
+obj.display()

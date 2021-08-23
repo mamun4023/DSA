@@ -1,0 +1,45 @@
+
+function edge(src, dest){
+  this.src = src;
+  this.dest = dest;
+}
+
+
+var Graph = function(){
+
+  let adj = new Map();
+
+  // adding function
+
+  this.add = function(edge){
+    const {src, dest} = edge;
+    if(adj.has(src)){
+      adj.get(src).push(dest);
+    }else{
+      adj.set(src, [dest])
+    }
+
+    // for undeirect 
+    if(adj.has(dest)){
+      adj.get(dest).push(src)
+    }else{
+      adj.set(dest, [src])
+    }
+  }
+
+
+  this.display= function(){
+    for(let key of adj.keys()){
+      console.log(key + "<-->"+ adj.get(key))
+    }
+  }
+}
+
+
+var obj = new Graph();
+obj.add(new edge('A', 'B'));
+obj.add(new edge('B', 'C'));
+obj.add(new edge('C', 'A'));
+
+obj.display();
+

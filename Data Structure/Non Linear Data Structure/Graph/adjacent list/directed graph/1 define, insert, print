@@ -1,0 +1,34 @@
+  function Edge(src, dest){
+    this.src = src;
+    this.dest = dest;
+  }
+
+
+const graph = function(edges){
+  let adj = new Map();
+
+  this.add = function(edge){
+    const {src, dest} = edge;
+    if(adj.has(src)){
+      adj.get(src).push(dest);
+    }else{
+      adj.set(src, [dest])
+    }
+  }
+
+  this.print = function() {
+    let n = adj.size;
+    for (let src of adj.keys()) {
+      console.log(src+ "——>"+ adj.get(src))
+    }
+  }
+}
+
+
+var obj =  new graph();
+obj.add( new Edge('a', 'b'))
+obj.add( new Edge('a', 'c'))
+obj.add( new Edge('a', 'd'))
+obj.add( new Edge('b', 'c'))
+
+obj.print();

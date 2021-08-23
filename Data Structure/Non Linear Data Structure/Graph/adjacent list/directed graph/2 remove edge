@@ -1,0 +1,56 @@
+
+function edge(src, dest){
+  this.src = src;
+  this.dest = dest;
+}
+
+
+var Graph = function(){
+
+  let adj = new Map();
+
+  // adding function
+
+  this.add = function(edge){
+    const {src, dest} = edge;
+    if(adj.has(src)){
+      adj.get(src).push(dest);
+    }else{
+      adj.set(src, [dest])
+    }
+  }
+
+// remove edge 
+  this.remove = function(edge){
+    const {src, dest} = edge;
+    let srcList = adj.get(src);
+    srcList = srcList.filter(e => e !== dest);
+
+    if(srcList.length === 0){
+      adj.delete(src);
+      console.log("edge removed")
+    }else{
+      console.log("No (" +src+ "-->" +dest+ ") edge not exist ")
+    }
+
+    return true;
+  }
+  
+
+
+  this.display= function(){
+    for(let key of adj.keys()){
+      console.log(key + "-->"+ adj.get(key))
+    }
+  }
+}
+
+
+var obj = new Graph();
+obj.add(new edge('A', 'B'));
+obj.add(new edge('B', 'C'));
+obj.add(new edge('C', 'A'));
+obj.remove(new edge('A','C'))
+
+obj.display();
+

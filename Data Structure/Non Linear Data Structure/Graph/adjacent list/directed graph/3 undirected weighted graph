@@ -1,0 +1,44 @@
+
+// define edge with weight 
+function edge(src, dest, weight){
+  this.src = src;
+  this.dest = dest;
+  this.weight = weight;
+}
+
+
+
+//define node with weight
+function Node(dest, weight){
+  this.dest = dest;
+  this.weight = weight;
+}
+
+// define graph
+var Graph = function(){
+
+  let adj = new Map();
+
+  this.add = function(edge){
+    const {src, dest, weight} = edge;
+    if(adj.has(src)){
+      adj.get(src).push(new Node(dest, weight));
+    }else{
+      adj.set(src, [new Node(dest, weight)])
+    }
+  }
+
+  this.display = function(){
+    for(let src of adj.keys()){
+      
+      for(let data of adj.get(src))
+          console.log(src+ "-->" + "("+ data.dest, data.weight+")")
+    }
+  }
+}
+
+var obj = new Graph();
+obj.add(new edge('A', 'B', 123))
+obj.add(new edge('B', 'B', 10))
+obj.add(new edge('A', 'C', 123))
+obj.display();

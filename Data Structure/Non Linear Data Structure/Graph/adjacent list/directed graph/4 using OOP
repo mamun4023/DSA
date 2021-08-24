@@ -19,13 +19,6 @@ class Graph{
     }else{
       this.adj.set(src, [dest])
     }
-
-    // for undirected
-    if(this.adj.has(dest)){
-      this.adj.get(dest).push(src)
-    }else{
-      this.adj.set(dest, [src])
-    }
   }
 
   //display

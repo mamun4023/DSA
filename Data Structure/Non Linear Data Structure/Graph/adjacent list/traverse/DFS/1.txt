@@ -1,9 +1,4 @@
 
-<script type="text/javascript">
-
-
-
-
 class Graph{
 	constructor(noOfVertics){
 		this.noOfVertics = noOfVertics;
@@ -107,4 +102,3 @@ obj.BFS('A');
 document.writeln("<br> DFS traversal -- : ")
 obj.DFS('A');
 // A B C E D F
-</script>

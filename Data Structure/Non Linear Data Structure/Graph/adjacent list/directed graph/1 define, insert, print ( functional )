@@ -4,7 +4,7 @@
   }
 
 
-const graph = function(edges){
+const graph = function(){
   let adj = new Map();
 
   this.add = function(edge){

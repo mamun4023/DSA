@@ -1,0 +1,110 @@
+
+class Node{
+  constructor(data){
+    this.data = data;
+    this.next = null;
+  }
+}
+
+
+class Linked_list{
+  constructor(){
+    this.head = null;
+  }
+
+
+  insert(data){
+    let newNode = new Node(data);
+
+    if(this.head  == null){
+      this.head = newNode;
+    }else{
+      let traverse = this.head;
+      while(traverse.next){
+        traverse = traverse.next;
+      }
+      traverse.next = newNode;
+}
+}
+
+  // display
+  display(){
+    let traverse = this.head; 
+    while(traverse){
+      document.write(traverse.data+ " ")
+      traverse = traverse.next;
+    }
+  }
+
+}
+
+function sortedMerge(headA,headB)
+{
+    /* a dummy first node to
+       hang the result on */
+    let dummyNode = new Node(0);  
+    /* tail points to the
+    last result node */
+    let tail = dummyNode;
+    while(true)
+    {
+        /* if either list runs out,
+        use the other list */
+        if(headA == null)
+        {
+            tail.next = headB;
+            break;
+        }
+        if(headB == null)
+        {
+            tail.next = headA;
+            break;
+        }
+          
+        /* Compare the data of the two
+        lists whichever lists' data is
+        smaller, append it into tail and
+        advance the head to the next Node
+        */
+        if(headA.data <= headB.data)
+        {
+            tail.next = headA;
+            headA = headA.next;
+        }
+        else
+        {
+            tail.next = headB;
+            headB = headB.next;
+        }
+          
+        /* Advance the tail */
+        tail = tail.next;
+    }
+    return dummyNode.next;
+}
+ 
+
+
+
+
+
+
+var ListA = new Linked_list();
+var ListB = new Linked_list();
+
+// list A
+ListA.insert(10);
+ListA.insert(30);
+ListA.insert(50);
+
+// list B
+ListB.insert(20);
+ListB.insert(40);
+ListA.display();
+document.write("<br>")
+ListB.display();
+document.write("<br>")
+ListA.head = sortedMerge(ListA.head,
+                                    ListB.head);
+document.write("Merged Linked List is:<br>")
+ListA.display(); 

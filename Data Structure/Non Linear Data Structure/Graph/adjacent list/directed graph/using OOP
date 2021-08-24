@@ -1,0 +1,45 @@
+
+// define node
+class Edge{
+  constructor(src, dest){
+    this.src = src;
+    this.dest = dest;
+  }
+}
+
+class Graph{
+  constructor(){
+    this.adj = new Map();
+  }
+
+  insert(edge){
+    const {src, dest} = edge;
+    if(this.adj.has(src)){
+      this.adj.get(src).push(dest);
+    }else{
+      this.adj.set(src, [dest])
+    }
+
+    // for undirected
+    if(this.adj.has(dest)){
+      this.adj.get(dest).push(src)
+    }else{
+      this.adj.set(dest, [src])
+    }
+  }
+
+  //display
+  display(){
+    for(let src of this.adj.keys()){
+      console.log(src + "-->"+ this.adj.get(src))
+    }
+  }
+}
+
+
+var obj = new Graph();
+obj.insert(new Edge('A', 'B'));
+obj.insert(new Edge('A', 'C'))
+
+
+obj.display();

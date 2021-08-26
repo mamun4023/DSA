@@ -1,0 +1,84 @@
+
+ 
+  class Edge{
+    constructor(src, dest, weight){
+      this.src = src;
+      this.dest = dest;
+      this.weight = weight;
+    }
+  }
+
+
+class Node{
+  constructor(dest, weight){
+    this.dest = dest;
+    this.weight = weight;
+  }
+}
+
+
+                                                                                                                                                                                                                   
+class Graph{
+  constructor(){
+    this.adj = new Map();
+  }
+
+
+  // add function
+
+  add(edge){
+    const {src, dest, weight} = edge;
+    if(this.adj.has(src)){
+      this.adj.get(src).push(new Node(dest, weight))
+    }else{
+      this.adj.set(src, [new Node(dest, weight)])
+    }
+  }
+
+BFS(startNode){
+  let visited = {};
+  let queue = []
+  visited[startNode] = true
+  queue.push(startNode);
+
+  while(queue.length > 0){
+    let element = queue.shift();
+    document.write(element+ " ")
+    let list =  this.adj.get(element);
+    if(list ==null){
+      break;
+    }
+    for(let data of list){
+      let neigh = data.dest;
+      if(list == null){
+        break;
+      }
+      if(!visited[neigh]){
+        visited[neigh] = true;
+        queue.push(neigh)
+      }
+    }
+  }
+}
+
+
+  // display function
+  display(){
+    for(let src of this.adj.keys()){
+        
+        for(let data of this.adj.get(src)){
+          console.log(src + "---> "+ data.dest+ " "+data.weight);
+        }
+    }
+
+  }
+}
+
+
+var obj = new Graph();
+obj.add(new Edge("A", "B",10));
+obj.add(new Edge("B", "C",20));
+obj.add(new Edge("A", "C",30));
+obj.add(new Edge("C", "D",50))
+obj.display();
+obj.BFS('A');

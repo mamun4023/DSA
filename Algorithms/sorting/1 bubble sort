@@ -1,1 +1,17 @@
-fdfd
+function Bubble_Sort(arr){
+  for(let i = 0 ; i<arr.length; i++){
+    for(let j = 0; j<arr.length - i; j++){
+      if(arr[j]>arr[j+1]){
+        [arr[j+1], arr[j]] = [arr[j], arr[j+1]]
+      }
+    }
+  }
+}
+
+
+var arr = [10,2,30,0,40];
+Bubble_Sort(arr);
+
+arr.forEach(e=> {
+  document.write(e+ " ")
+})

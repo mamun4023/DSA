@@ -1,1 +1,17 @@
-sdfdf
+function Insertion(arr){
+  for(let i = 1 ; i<arr.length; i++){
+      for(let j = i; j>0; j--){
+        if(arr[j-1]>arr[j]){
+          [arr[j], arr[j-1]] = [arr[j-1], arr[j]]
+        }
+      }
+    }
+  }
+
+
+var arr = [10,2,30,0,40,100,2,300,21];
+Insertion(arr);
+
+arr.forEach(e=> {
+  document.write(e+ " ")
+})

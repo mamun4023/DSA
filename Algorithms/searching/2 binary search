@@ -1,0 +1,22 @@
+function Binary_Search(arr, x, low, high){
+	if(high>low){
+		let mid = Math.floor((low+high)/2);
+
+		if(arr[mid] == x){
+			return true 
+		}
+
+		if(x < arr[mid]){
+			return Binary_Search(arr,x, low, mid-1)
+		}else{
+			return Binary_Search(arr, x, mid+1, high)
+		}
+	}
+	return false
+}
+
+
+var arr = [1,2,3,3,4,5];
+var high = arr.length;
+var low = 0;
+console.log(Binary_Search(arr,2, low, high))

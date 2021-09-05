@@ -1,1 +1,48 @@
 
+function Partition(arr, low, high){
+  let pivot = arr[low];
+  let i = low;
+  let j = high;
+  
+  while(i<j){
+  do{
+    i++
+  }while(arr[i]<=pivot);
+
+  do{
+    j--;
+  }while(arr[j]>pivot)
+
+  if(i < j){
+    let temp1 = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp1;
+  }
+
+}
+let temp2 = arr[low];
+arr[low] = arr[j];;
+arr[j] = temp2;
+return j; 
+
+}
+
+
+  function QuickSort(arr,low, high){
+    if(low<high){
+      //find pivot
+      let pi = Partition(arr, low, high);
+      //call left side of array
+      QuickSort(arr, low, pi);
+      //call right side
+      QuickSort(arr, pi+1, high);
+    }
+  }
+
+
+
+  let arr = [1,2,54,0,43,3,0];
+  QuickSort(arr, 0, arr.length)
+  console.log(arr);
+
+

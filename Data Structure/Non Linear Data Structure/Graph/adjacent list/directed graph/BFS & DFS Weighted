@@ -1,0 +1,102 @@
+
+
+class Edge{
+  constructor(src, dest, weight){
+    this.src = src;
+    this.dest = dest;
+    this.weight = weight;
+  }
+}
+
+
+class Node{
+  constructor(dest, weight){
+    this.dest = dest;
+    this.weight = weight;
+  }
+}
+
+
+class Graph{
+  constructor(){
+    this.adjList = new Map();
+  }
+
+
+  Insert(edge){
+    const{src, dest, weight} = edge;
+    if(this.adjList.has(src)){
+      this.adjList.get(src).push(new Node(dest, weight))
+    }else{
+      this.adjList.set(src, [new Node(dest, weight)])
+    }
+  }
+
+  
+  display(){
+    let keys = this.adjList.keys();
+    for(let key of keys){
+       let neighbor = this.adjList.get(key)
+       for(let neigh of neighbor){
+          console.log( key + "-->"+ "("+neigh.dest, neigh.weight+ ")")
+       }
+    }
+    
+  }
+
+  BFS(startNode){
+    let visited = {};
+    let queue = [];
+    visited[startNode] = true;
+    queue.push(startNode);
+
+    while(queue.length > 0){
+      let element = queue.shift();
+      document.write(element+ " ");
+      let neighbor = this.adjList.get(element);
+      for(let i in neighbor){
+        let neigh = neighbor[i];
+        if(!visited[neigh.dest]){
+          visited[neigh.dest] = true;
+          queue.push(neigh.dest)
+        }
+      }
+    }
+  }
+
+
+  DFS(startNode){
+    let visited = {}
+    this.DFSUntil(startNode, visited)
+  }
+
+  DFSUntil(vert, visited){
+    visited[vert] = true;
+    document.write(vert+ " ");
+    let neighbor = this.adjList.get(vert)
+    for(let i in neighbor){
+      let neigh = neighbor[i];
+        if(!visited[neigh.dest]){
+          this.DFSUntil(neigh.dest, visited)
+        }
+    }
+
+  }
+}
+
+
+var obj = new Graph();
+obj.Insert(new Edge('A','B', 10));
+obj.Insert(new Edge('A','C', 20));
+obj.Insert(new Edge('A','E', 30));
+
+obj.Insert(new Edge('B','D', 40));
+obj.Insert(new Edge('C','F', 60));
+
+obj.Insert(new Edge('D','F', 10));
+
+obj.display();
+
+obj.BFS('A')
+document.write("<br>")
+obj.DFS('A')

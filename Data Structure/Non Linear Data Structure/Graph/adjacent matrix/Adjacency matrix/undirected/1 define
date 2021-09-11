@@ -1,34 +1,34 @@
 <script type="text/javascript">
-	
+  
 
 // declare a matrix
 var arr = [
-		[0,0,0,0,0,0],
-		[0,0,0,0,0,0],
-		[0,0,0,0,0,0],
-		[0,0,0,0,0,0],
-		[0,0,0,0,0,0],
-		[0,0,0,0,0,0]
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0]
 
-	];
+  ];
 
 
  function display(){
- 	for(var i=0; i<arr.length; i++){
- 		for(var j=0; j<arr.length; j++){
- 			document.write(arr[i][j], " ");
- 		}
- 		document.write("<br>");
- 	}
+  for(var i=0; i<arr.length; i++){
+    for(var j=0; j<arr.length; j++){
+      document.write(arr[i][j], " ");
+    }
+    document.write("<br>");
+  }
  }
 
  
 
 // adding edge 
 
- function addEdge(u, v){
- 	arr[u][v] = 1;
- 	arr[v][u] = 1;
+ function addEdge(src, dest){
+  arr[src][dest] = 1;
+  arr[dest][src] = 1;
  }
 
  addEdge(0,4);

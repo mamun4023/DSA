@@ -1,0 +1,35 @@
+
+  let arr = [
+      [0,0,0,0,0],
+      [0,0,0,0,0],
+      [0,0,0,0,0],
+      [0,0,0,0,0],
+      [0,0,0,0,0],
+]
+
+
+ // adding edge
+ function addEdge(src, dest){
+  arr[src][dest] = 1
+   arr[dest][src] = 1
+ }
+
+
+ // delete edge
+ function deleteEdge(src, dest){
+  arr[src][dest] = 0;
+  arr[dest][src] = 0;
+ }
+
+
+ addEdge(0,1)
+ deleteEdge(0,1);
+
+  for(let i = 0; i<arr.length; i++){
+    for(let j = 0; j<arr.length; j++){
+      document.write(arr[i][j]+ " ")
+    }
+    document.write("<br>")
+  }
+  
+

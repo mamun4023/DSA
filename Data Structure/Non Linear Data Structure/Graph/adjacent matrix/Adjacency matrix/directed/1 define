@@ -1,7 +1,4 @@
 
-<script type="text/javascript">
-  
-
 // declare a matrix
 var arr = [
     [0,0,0,0,0,0],
@@ -44,5 +41,3 @@ var arr = [
 document.write("Adjacent Mattix are :", "<br>") 
 display();
 
-
-</script>

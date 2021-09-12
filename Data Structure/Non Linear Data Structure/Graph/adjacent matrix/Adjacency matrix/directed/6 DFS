@@ -1,0 +1,44 @@
+
+  /*
+   Directed graph 
+
+         (0)
+        / | \
+      /   |  \
+    (1)  (2)  (4)
+          |
+          |
+         (3)
+
+*/
+
+
+let adjMatrix = [
+      [0,1,1,0,1],
+      [0,0,0,0,0],
+      [0,0,0,1,0],
+      [0,0,0,0,0],
+      [0,0,0,0,0],
+]
+        
+
+DFS(adjMatrix, 0)
+
+
+// DFS 
+function DFS(adjMatrix, startVertex){
+    let visited = {};
+    UntilDFS(startVertex, visited)
+}
+
+function UntilDFS(currentVertex, visited){
+  visited[currentVertex] = true;
+  document.write(currentVertex + " ");
+  for(let i = 0; i<adjMatrix.length; i++){
+    let neigh = adjMatrix[currentVertex][i];
+    if(neigh === 1 && !visited[i]){
+      visited[i] = true;
+      UntilDFS(i, visited)
+    }
+  }
+}

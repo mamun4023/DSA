@@ -1,0 +1,45 @@
+
+  /*
+   Directed graph 
+
+         (0)
+        / | \
+      /   |  \
+    (1)  (2)  (4)
+          |
+          |
+         (3)
+
+*/
+
+
+let adjMatrix = [
+      [0,1,1,0,1],
+      [0,0,0,0,0],
+      [0,0,0,1,0],
+      [0,0,0,0,0],
+      [0,0,0,0,0],
+]
+        
+
+// call BFS 
+BFS(adjMatrix,0)
+
+function BFS(arr, startVertex){
+  let visited = {};
+  let queue = [];
+  visited[startVertex] = true;
+  queue.push(startVertex);
+
+  while(queue.length > 0){
+    let currentVertex = queue.shift();
+    document.write(currentVertex+ " ");
+    for(let i = 0; i<adjMatrix.length; i++){
+      let neigh = adjMatrix[currentVertex][i];
+      if( neigh === 1 && !visited[i]){
+        visited[i] = true;
+        queue.push(i)
+      }
+    }
+  }
+}

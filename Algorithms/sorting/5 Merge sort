@@ -1,5 +1,4 @@
 
-
 function Merge(arr, low, mid, high){
 	let index_l, index_r, index_a;
 	let size_l = mid - low + 1;
@@ -51,16 +50,15 @@ function Merge(arr, low, mid, high){
 }
 
 
-
 function MergeSort(arr, low, high){
 
-	if(low < high) {
+if(low < high){
 	let mid = Math.floor( low + (high - low)/2);
     MergeSort(arr, low, mid);
     MergeSort(arr, mid+1, high);
     Merge(arr, low, mid, high);
 
-}
+  }
 }
 
 

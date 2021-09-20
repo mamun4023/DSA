@@ -1,0 +1,15 @@
+<script type="text/javascript">
+	
+let data = "ac2";
+let visited = {}
+for(let i of data){
+	if(!visited[i]){
+		visited[i] = 1;
+	}else{
+		visited[i] = visited[i] + 1
+	}
+}
+
+console.log(JSON.stringify(visited))
+
+</script>

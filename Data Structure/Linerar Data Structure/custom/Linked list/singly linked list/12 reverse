@@ -1,0 +1,12 @@
+reverse(){
+		let prev = null;
+		let curr  = this.head;
+		let after = null
+		while(curr){
+			after = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = after;
+		}
+		this.head = prev;
+	}

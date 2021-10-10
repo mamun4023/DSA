@@ -1,0 +1,7 @@
+ function traversing(){
+    let traverse = this.head; 
+    while(traverse){
+      document.write(traverse.data+ " ")
+      traverse = traverse.next;
+    }
+  }

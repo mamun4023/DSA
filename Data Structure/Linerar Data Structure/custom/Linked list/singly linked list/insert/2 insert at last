@@ -1,0 +1,62 @@
+// Node model declaration
+class Node { 
+    constructor(element) 
+    { 
+        this.element = element; 
+        this.next = null
+    } 
+} 
+
+// linked list declaration
+class LinkedList { 
+	constructor() 
+	{ 
+		this.head = null; 
+	} 
+  
+  // add function 
+add(element) 
+{ 
+	// creates a new node 
+	var node = new Node(element); 
+	if (this.head == null) 
+		this.head = node; 
+	else { 
+	 var traverse = this.head; 
+		while (traverse.next) { 
+			traverse = traverse.next; 
+		} 
+		traverse.next = node; 
+	} 
+} 
+
+
+
+// prints the list items 
+printList() 
+{
+	var traverse = this.head; 
+	while (traverse) { 
+		document.write(traverse.element +" ")
+		traverse = traverse.next; 
+	} 
+} 
+} 
+
+
+// creating an object 
+var ll = new LinkedList();  
+ll.add(10); 
+  
+// prints 10 
+ll.printList(); 
+document.write("<br>"); 
+  
+// adding more elements to the list 
+ll.add(20); 
+ll.add(30); 
+ll.add(40); 
+ll.add(50); 
+
+// returns 10 20 30 40 50 
+ll.printList(); 

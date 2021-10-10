@@ -1,1 +1,40 @@
-fd
+class Node{
+  constructor(element){
+    this.element = element;
+    this.next = null;
+  }
+}
+
+class Linked_list{
+  constructor(){
+    this.head = null;
+  }
+
+  insert(element){
+    var node = new Node(element);
+
+    var traverse = this.head;
+
+    if(this.head == null)
+      this.head = node;
+    else{
+       node.next = this.head;
+       this.head = node;
+    }
+  }
+
+  print(){
+    var traverse = this.head;
+    while(traverse){
+      console.log(traverse.element);
+      traverse = traverse.next;
+      
+    }
+  }
+}
+
+var obj = new Linked_list();
+obj.insert(10);
+obj.insert(1000);
+obj.insert(4000);
+obj.print();

@@ -1,1 +1,42 @@
 
+class Node{
+	constructor(data){
+		this.prev = null
+		this.data = data;
+		this.next = null
+	}
+}
+
+class Linked_list{
+	constructor(){
+		this.head = null;
+	}
+
+	// insert at start of the list
+	insert(data){
+		let newNode = new Node(data);
+		if(this.head == null){
+			this.head = newNode;
+		}else{
+			newNode.next = this.head;
+			this.head.prev = newNode;
+			this.head = newNode;
+		}
+	}
+
+	display(){
+		let traverse = this.head;
+		while(traverse){
+			document.write(traverse.data+ " ");
+			traverse = traverse.next;
+		}
+	}
+  
+}
+
+let obj = new Linked_list();
+obj.insert(100);
+obj.insert(200);
+obj.insert(33);
+obj.insert(303);
+obj.display();

@@ -1,0 +1,60 @@
+
+
+
+class Node{
+	constructor(data){
+		this.data = data;
+		this.next = null;
+	}
+}
+
+
+class Circualar{
+	constructor(){
+		this.tail = null;
+	}
+
+	// insert at start position
+	insert(data){
+		let newNode = new Node(data);
+		if(this.tail == null){
+			this.tail = newNode;
+			this.tail.next =newNode; 
+		}else{
+			newNode.next = this.tail.next;
+			this.tail.next = newNode;
+		}
+	}
+
+	head(){
+		let head = this.tail.next;
+		document.write("<br>"+ head.data)
+	}
+
+	taildata(){
+		document.write("<br>"+ this.tail.data)
+	}
+	
+
+	display(){
+		let traverse = this.tail;
+		do{
+			traverse = traverse.next;
+			document.write(traverse.data+ " ");
+		}while(traverse != this.tail)
+	}
+}
+
+
+let obj = new Circualar();
+obj.insert(10);
+obj.insert(30);
+obj.insert(100);
+obj.insert(4);
+
+
+obj.display();
+obj.head();
+obj.taildata();
+
+

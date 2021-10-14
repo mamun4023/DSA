@@ -1,1 +1,64 @@
 
+
+class Node{
+	constructor(data){
+		this.left = null;
+		this.data = data;
+		this.right = null;
+	}
+}
+
+class BST{
+	constructor(){
+		this.root = null;
+	}
+
+    addHelper(node, newNode){
+		if(newNode.data < node.data){
+			if(node.left == null){
+				node.left = newNode;
+			}else{
+				this.addHelper(node.left, newNode);
+			}
+		}else{
+			if(node.right == null){
+				node.right = newNode;
+			}else{
+				this.addHelper(node.right, newNode);
+			}
+		}
+	}
+
+
+	insert(data){
+		let newNode = new Node(data);
+		if(this.root == null){
+			this.root = newNode;
+		}else{
+			this.addHelper(this.root, newNode);
+		}
+	}
+
+	
+	Inorder(node){ 
+		if(node != null){
+			this.Inorder(node.left);
+			 document.write(node.data + " ");
+			this.Inorder(node.right);
+		}
+	}
+
+	rootNode(){
+		return this.root;
+	}
+}
+
+let obj = new BST();
+obj.insert(10);
+obj.insert(3);
+obj.insert(33);
+obj.insert(4);
+obj.insert(7);
+obj.insert(40);
+let root = obj.rootNode();
+obj.Inorder(root);

@@ -1,1 +1,19 @@
 
+// recursive function
+	minVlaue(node){
+		if(node.left == null)
+			return node.data;
+		return this.minVlaue(node.left)
+	}
+
+	//without recursive function
+    min(node){
+    	if(node){
+    		// return left most descendent value
+    		while(node && node.left != null){
+    			node = node.left;
+    		}
+    		return node.data;
+    	}
+    	return null;
+    }

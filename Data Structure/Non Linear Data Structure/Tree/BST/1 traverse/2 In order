@@ -1,1 +1,7 @@
-
+	Inorder(node){ 
+		if(node != null){
+			this.Inorder(node.left);
+			 document.write(node.data + " ");
+			this.Inorder(node.right);
+		}
+	}

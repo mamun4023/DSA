@@ -1,6 +1,6 @@
-	Inorder(node){ 
+	preOrder(node){ 
 		if(node != null){
-      document.write(node.data + " ");
+      			document.write(node.data + " ");
 			this.Inorder(node.left);
 			this.Inorder(node.right);
 		}

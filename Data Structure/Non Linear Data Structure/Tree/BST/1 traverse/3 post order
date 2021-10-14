@@ -1,1 +1,8 @@
 
+	postOrder(node){ 
+		if(node != null){
+			this.Inorder(node.left);
+			this.Inorder(node.right);
+      document.write(node.data + " ");
+		}
+	}

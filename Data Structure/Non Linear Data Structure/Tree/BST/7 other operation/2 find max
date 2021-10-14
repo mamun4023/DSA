@@ -1,0 +1,18 @@
+	// recursive function
+	MaxVlaue(node){
+		if(node.right == null)
+			return node.data;
+		return this.minVlaue(node.right)
+	}
+
+	//without recursive function
+    Max(node){
+    	if(node){
+    		// return left most descendent value
+    		while(node && node.right != null){
+    			node = node.right;
+    		}
+    		return node.data;
+    	}
+    	return null;
+    }

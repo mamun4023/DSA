@@ -16,7 +16,7 @@ function Binary_Search(arr, x, low, high){
 }
 
 
-var arr = [1,2,3,3,4,5];
+var arr = [1,2,3,3,4,5];   // array must be sorted
 var high = arr.length;
 var low = 0;
 console.log(Binary_Search(arr,2, low, high))

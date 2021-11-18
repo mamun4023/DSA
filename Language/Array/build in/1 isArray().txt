@@ -1,8 +1,0 @@
-<script type="text/javascript">
-
-
-
-var phone = [1,2,3,4];
-document.write(Array.isArray(phone));
-
-</script>

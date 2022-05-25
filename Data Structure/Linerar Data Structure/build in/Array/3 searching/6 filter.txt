@@ -9,7 +9,7 @@ let users = [
 ]
 
 let user  = users.filter(item => item.id < 2);
-document.write(user.name);
+console.log(user);   // return decendent element (object)
 
 
 </script>

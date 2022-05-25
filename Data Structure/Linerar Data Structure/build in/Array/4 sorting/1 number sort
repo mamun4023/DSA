@@ -1,1 +1,4 @@
-dd
+var arr = [50,30,2,30,1,4];
+
+arr.sort((a, b)=> {return a-b});  // a-b return assending order & b-a return descending order
+console.log(arr);

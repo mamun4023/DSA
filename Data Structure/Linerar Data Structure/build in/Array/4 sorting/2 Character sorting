@@ -1,0 +1,5 @@
+var arr = ["a", "b", "c", "d"];
+
+arr.sort()       // for descending order use  arr.sort().reverse()  
+console.log(arr);
+

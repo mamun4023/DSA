@@ -6,6 +6,7 @@ let arr = ['A','B','C'];
 
 // negative index start from end 
 arr.splice(-1,0,"DD"); // adding item 
+// if +index exceed then remove not work but for -index remove last one  
 document.write(arr);
 
 

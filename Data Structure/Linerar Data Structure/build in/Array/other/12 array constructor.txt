@@ -1,0 +1,28 @@
+// literal constructor
+[element0, element1, /* ... ,*/ elementN]
+
+// construct from elements
+new Array(element0, element1, /* ... ,*/ elementN)
+
+// construct from array length
+new Array(arrayLength)
+
+
+
+
+// literal array construction
+
+let fruits = ['Apple', 'Banana'];
+
+console.log(fruits.length); // 2
+console.log(fruits[0]);     // "Apple"
+
+
+
+
+// array constructor 
+
+let fruits = new Array(2);
+
+console.log(fruits.length); // 2
+console.log(fruits[0]);  

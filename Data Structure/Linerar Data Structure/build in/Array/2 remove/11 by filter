@@ -1,0 +1,27 @@
+
+  let arr = [
+	{
+    "day": "Sunday",
+    "start_time": "10:00:00",
+    "no_of_hours": 3,
+    "is_open": false
+  	}
+  	{
+    "day": "Monday",
+    "start_time": "10:00:00",
+    "no_of_hours": 3,
+    "is_open": false
+  	},
+  	{
+    "day": "Tuesday",
+    "start_time": "10:00:00",
+    "no_of_hours": 3,
+    "is_open": false
+  	}
+  ]
+
+  // remove the data from array
+  const data = arr.filter(d => d.day !== "Sunday")
+
+
+  console.log(data)

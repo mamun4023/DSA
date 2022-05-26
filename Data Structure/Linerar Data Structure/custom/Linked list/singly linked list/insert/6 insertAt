@@ -1,0 +1,78 @@
+<script type="text/javascript">
+	
+
+class Node{
+	constructor(element){
+		this.element = element;
+		this.next = null;
+	}
+}
+
+
+class Linked_list{
+	constructor(){
+		this.head = null
+	}
+
+	insert(element){
+		let node = new Node(element);
+
+		if(this.head == null){
+			this.head = node;
+		}else{
+			let traverse = this.head;
+			while(traverse.next != null){
+				traverse = traverse.next;
+			}
+			traverse.next = node;
+
+		}
+	}
+
+	insertAt(data, position){
+		let node = new Node(data);
+		let i = 1;
+
+		if(position == 1){
+			node.next = this.head;
+			this.head = node;
+		}else{ 
+
+			let traverse = this.head;
+
+			while(i < position-1){
+				traverse = traverse.next;
+				i++;
+			}
+			let prev = traverse;
+			let after = traverse.next;
+
+			prev.next = node;
+			node.next = after;
+		}
+	}
+
+
+	display(){
+		let traverse = this.head;
+
+		while(traverse){
+			document.write(traverse.element, " ");
+			traverse = traverse.next;
+		}
+	}	
+}
+
+
+var obj = new Linked_list();
+obj.insert(10);
+obj.insert(100);
+obj.insert(300);
+obj.insert(300);
+obj.insert(5000);
+obj.insertAt("DDD", 6)
+obj.display();
+
+
+
+</script>

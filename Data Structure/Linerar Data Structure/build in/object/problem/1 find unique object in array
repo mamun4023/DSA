@@ -1,0 +1,41 @@
+
+  let Tuesday = {
+    "day": "Tuesday",
+    "start_time": "10:00:00",
+    "no_of_hours": 3,
+    "is_open": false
+  }
+
+    let monday = {
+    "day": "Tuesday",
+    "start_time": "10:00:00",
+    "no_of_hours": 3,
+    "is_open": false
+  }
+
+  let TuesdayCopy = {
+    "day": "Tuesday",
+    "start_time": "10:00:00",
+    "no_of_hours": 3,
+    "is_open": false
+  }
+
+  let sunday = {
+    "day": "sunday",
+    "start_time": "10:00:00",
+    "no_of_hours": 3,
+    "is_open": false
+  }
+
+
+  let arr = [Tuesday, monday,TuesdayCopy, sunday];
+
+        var newArr =[];
+        arr.forEach((item)=>{ 
+            if(newArr.some(el => el.day === item.day)===false){
+                newArr.push(item);
+            }  
+        }
+        ); 
+      console.log(newArr);
+

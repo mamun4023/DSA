@@ -1,0 +1,34 @@
+<script type="text/javascript">
+	
+const weather = [{
+   day: 'Wednesday',
+   humidity: 60
+}, {
+   day: 'Saturday',
+   humidity: 50
+}, {
+   day: 'Thursday',
+   humidity: 65
+}, {
+   day: 'Monday',
+   humidity: 40
+}, {
+   day: 'Sunday',
+   humidity: 35
+}, {
+   day: 'Friday',
+   humidity: 80
+}, {
+   day: 'Tuesday',
+   humidity: 45
+}];
+const map = {
+   'Sunday': 1,'Monday': 2,'Tuesday': 3,'Wednesday': 4,'Thursday': 5,'Friday': 6,
+   'Saturday': 7
+};
+weather.sort((a, b) => {
+   return map[a.day] - map[b.day];
+});
+console.log(weather);
+
+</script>

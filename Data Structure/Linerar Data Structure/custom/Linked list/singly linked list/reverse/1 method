@@ -1,0 +1,80 @@
+<script type="text/javascript">
+
+
+class Node{
+  constructor(data){
+    this.data = data;
+    this.next = null;
+  }
+}
+
+
+class Linked_list{
+  constructor(){
+    this.head = null;
+  }
+
+
+  Add(data){
+    let newNode = new Node(data);
+    if(this.head === null){
+      this.head = newNode;
+    }else{
+      let traverse = this.head;
+      while(traverse.next){
+
+        traverse = traverse.next;
+      }
+      traverse.next = newNode;
+    }
+  }
+
+  Reverse(node){
+    let prev = null;
+    let next = null;
+    let current = node;
+
+    while(current){
+      next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
+    }
+
+    node = prev;
+    return node;
+  }
+
+
+  GetHead(){
+    return this.head;
+  }
+
+
+  Display(traverse){
+    while(traverse){
+      document.write(traverse.data, " ");
+      traverse = traverse.next;
+    }
+  }
+}
+
+
+let list = new Linked_list();
+
+list.Add(10);
+list.Add(20);
+list.Add(30);
+list.Add(40);
+list.Add(100);
+list.Display(list.GetHead());
+
+
+let revese = list.Reverse(list.GetHead())
+document.write("<br/> ")
+list.Display(revese);
+
+// console.log(list.GetHead())
+
+
+</script>

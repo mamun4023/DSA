@@ -1,0 +1,37 @@
+
+// solution 1
+var findDisappearedNumbers = function(nums) {
+  	let arr = nums.sort();
+  	let result = []
+  	 for(let i = 1; i<arr.length; i++){
+  	 	 if(arr[i-1] == arr[i]){
+  	 	 	result.push(arr[i])
+  	 	 }
+  	 }
+  	return result;  
+};
+
+
+
+
+
+// solution 2
+var findDuplicates = function(nums) {
+    let hashTable = {}
+    let duplicated = []
+    for(let i = 0; i<nums.length; i++){
+    	if(hashTable.hasOwnProperty(nums[i])){
+    		hashTable[nums[i]] = hashTable[nums[i]]+1;
+    	}else{
+    		hashTable[nums[i]]=1
+    	}
+    }
+
+    for(let i in hashTable){
+    	if(hashTable[i] > 1){
+    		duplicated.push(i)
+    	}
+    }
+
+   return duplicated;
+};

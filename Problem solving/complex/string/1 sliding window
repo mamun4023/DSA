@@ -1,0 +1,14 @@
+function MaxSum(arr, n, k){
+	let max = Number.MIN_VALUE;
+
+	for(let i = 0; i<n-k+1; i++){
+		let current = 0;
+		for(let j = 0; j<k; j++){
+			current = current + arr[i+j]
+		}
+
+		max = Math.max(max, current);
+	}
+	
+	return max;
+}

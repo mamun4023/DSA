@@ -1,0 +1,84 @@
+
+function edge(src, dest, weight){
+	this.src = src;
+	this.dest = dest;
+	this.weight = weight;
+}
+
+
+function Node(dest, weight){
+	this.dest = dest;
+	this.weight = weight;
+}
+
+
+
+
+
+class Graph{
+	constructor(){
+		this.adList = new Map();
+	}
+
+
+
+	Insert(edge){
+		const {src, dest, weight} = edge;
+		if(this.adList.has(src)){
+			 let  obj = {
+			 	dest : dest,
+			 	weight : weight
+			 }
+			this.adList.get(src).push(obj)
+		}else{
+			let obj = {
+			 	dest : dest,
+			 	weight : weight
+			 }
+			this.adList.set(src, [obj])
+		}
+	}
+
+
+
+	display(){
+		let keys = this.adList.keys();
+
+		for(let key of keys){
+			let neighbors = this.adList.get(key);
+				for(let i in neighbors){
+					console.log(key + "-->"+ neighbors[i].dest, ":" , neighbors[i].weight)
+				}
+		}
+	}
+
+	BFS(startNode){
+		let visited = {};
+		let queue = [];
+		visited[startNode] = true;
+		queue.push(startNode);
+
+		while(queue.length > 0){
+			let currentNode = queue.shift();
+			document.write(currentNode + " ");
+			let neighbors = this.adList.get(currentNode);
+			for(let i in neighbors){
+				let neigh = neighbors[i].dest;
+				if(!visited[neigh]){
+					visited[neigh] = true;
+					queue.push(neigh)
+				}
+			}
+		}
+	}	
+
+}
+
+
+let obj = new Graph();
+obj.Insert(new edge("A", "B", 10));
+obj.Insert(new edge("A", "D", 10));
+obj.Insert(new edge("B", "C", 30));
+obj.display();
+obj.BFS("A");
+

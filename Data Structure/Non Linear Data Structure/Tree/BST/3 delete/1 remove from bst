@@ -1,0 +1,102 @@
+
+class Node{
+	constructor(data){
+		this.data = data;
+		this.left = null;
+		this.right = null;
+	}
+}
+
+
+class BST{
+	constructor(){
+		this.root = null
+	}
+
+	InsertHelper(currentNode, newNode){
+		if(newNode.data < currentNode.data){
+			if(currentNode.left == null){
+				currentNode.left = newNode;
+			}else{
+				this.InsertHelper(currentNode.left, newNode)
+			}
+		}else{
+			if(currentNode.right == null){
+				currentNode.right = newNode;
+			}else{
+				this.InsertHelper(currentNode.right, newNode)
+			}
+		}
+	}
+
+	Insert(data){
+		let newNode = new Node(data);
+		if(this.root == null){
+			this.root = newNode;
+		}else{
+			this.InsertHelper(this.root, newNode)
+		}
+	}
+
+	Traverse(node){
+		if(node != null){
+			this.Traverse(node.left);
+			document.write(node.data + " ");
+			this.Traverse(node.right);
+			
+		}
+	}
+
+	Root(){
+		return this.root;
+	}
+
+	RemoveHelper(root, key){
+		if(key < root.data){
+			root.left = this.RemoveHelper(root.left, key);
+		}else if(key > root.data){
+			root.right = this.RemoveHelper(root.right, key)
+		}else{
+			if(root.left == null){
+				return root.right;
+			}
+
+			if(root.right == null){
+				return root.left
+			}
+
+			root.data = this.MinValue(root.right);
+			root.right = this.RemoveHelper(root.right, root.data)
+		}
+
+		return root;
+	}
+
+
+	Remove(key){
+		if(this.root == null){
+			console.log("List is empty")
+		}else{
+			this.RemoveHelper(this.root, key);
+		}
+	}
+
+
+	MinValue(node){
+		if(node.left == null){
+			return node.data;
+		}
+		return this.MinValue(node.left)
+	}
+}
+
+let obj = new BST();
+obj.Insert(10);
+obj.Insert(9);
+obj.Insert(20);
+obj.Insert(12);
+obj.Insert(40);
+
+obj.Remove(10);
+let root = obj.Root();
+obj.Traverse(root);

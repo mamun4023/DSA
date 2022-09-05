@@ -1,0 +1,19 @@
+  function printpairs(arr, sum)
+    {
+        let s = new Set();
+        for (let i = 0; i < arr.length; ++i)
+        {
+            let temp = sum - arr[i];
+ 
+            // checking for condition
+            if (s.has(temp)) {
+                console.log(arr[i]+ " " + temp);
+            }
+            s.add(arr[i]);
+        }
+    }
+ 
+ 
+        let A = [ 1, 4, 45, 6, 40, 2 ];
+        let n = 8;
+        printpairs(A, n);

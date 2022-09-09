@@ -1,0 +1,80 @@
+
+function Node(data){
+	this.data = data;
+	this.next = null;
+}
+
+const LinkedList = function(){
+	this.head = null;
+
+
+	this.Insert = (data)=>{
+		let newNode = new Node(data);
+		if(this.head == null){
+			this.head = newNode
+		}else{
+			let traverse = this.head;
+			while(traverse.next){
+
+				traverse = traverse.next;
+			}
+
+			traverse.next = newNode;
+
+		}
+	}
+
+	this.FindMidle = ()=>{
+		let slow = this.head;
+		let fast = slow
+		while(fast.next){
+			fast = fast.next.next;
+			slow = slow.next;
+		}
+
+		console.log(slow.data);
+	}
+
+	this.reverse = (node)=>{
+		let prev = null
+		let next = null;
+		let curr = node;
+
+		while(curr){
+			next = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = next;
+		}
+
+		node = prev;
+		return node;
+		
+	}
+
+	this.Display = ()=>{
+		let traverse = this.head;
+		while(traverse){
+			document.write(traverse.data+ " ")
+			traverse = traverse.next
+
+		}
+	}
+	this.getHead = ()=>{
+		return this.head;
+	}
+}
+
+
+
+let obj = new LinkedList();
+obj.Insert(10);
+obj.Insert(30);
+obj.Insert(40);
+obj.Insert(54);
+obj.Insert(54);
+obj.Display();
+obj.FindMidle()
+let rev = obj.reverse(obj.getHead());
+console.log(rev)
+

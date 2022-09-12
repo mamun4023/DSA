@@ -1,7 +1,27 @@
+	// with reccursion
+	
 	Inorder(node){ 
 		if(node != null){
 			this.Inorder(node.left);
 			 document.write(node.data + " ");
 			this.Inorder(node.right);
+		}
+	}
+
+	// without reccursion
+	Inorder(node){
+		if(!node) 
+			return;
+
+		var stack = [];
+		while(node != null || stack.length > 0){
+			// reach left most
+			while(node != null){
+				stack.push(node);
+				node = node.left;
+			}
+			node = stack.pop();
+			document.write(node.data + " ");
+			node = node.right;
 		}
 	}

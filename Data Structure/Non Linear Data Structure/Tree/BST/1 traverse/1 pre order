@@ -1,7 +1,29 @@
+	// with recurssion
 	preOrder(node){ 
 		if(node != null){
       			document.write(node.data + " ");
 			this.Inorder(node.left);
 			this.Inorder(node.right);
+		}
+	}
+
+
+	
+	// without recurssion
+	PreOrder(node){
+		var stack = [node];
+		while(stack.length > 0){
+	
+			let curr = stack[stack.length -1]
+			document.write(curr.data + " ");
+			stack.pop();
+
+			if(curr.right !=null){
+				stack.push(curr.right)
+			}
+
+			if(curr.left != null){
+				stack.push(curr.left)
+			}
 		}
 	}

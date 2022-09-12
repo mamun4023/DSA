@@ -1,3 +1,4 @@
+	// with reccursion
 
 	postOrder(node){ 
 		if(node != null){
@@ -6,3 +7,36 @@
       document.write(node.data + " ");
 		}
 	}
+
+	// without reccursion
+	
+     postOrder(root){
+        // Two stacks as used in explanation
+        // Create two stacks
+        var s1 = [];
+        var s2 = [];
+ 
+        if (root == null) return;
+ 
+        // Push root to first stack
+        s1.push(root);
+ 
+        // Run while first stack is not empty
+        while (s1.length > 0) {
+          // Pop an item from s1 and Push it to s2
+          var temp = s1.pop();
+          s2.push(temp);
+ 
+          // Push left and right children of
+          // removed item to s1
+          if (temp.left != null) s1.push(temp.left);
+          if (temp.right != null) s1.push(temp.right);
+        }
+ 
+        // Print all elements of second stack
+        while (s2.length > 0) {
+          var temp = s2.pop();
+          document.write(temp.data + " ");
+        }
+      }
+ 

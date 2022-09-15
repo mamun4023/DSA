@@ -1,0 +1,7 @@
+// check only null and undefined data
+let data = undefined
+let data2 = null
+console.log(data?? "default data")
+console.log(data2?? "default data")
+console.log(0?? "default data")
+console.log(""?? "default data")

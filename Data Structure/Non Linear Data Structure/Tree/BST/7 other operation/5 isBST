@@ -1,0 +1,16 @@
+var isValidBST = function(root) {
+    if (root == null)
+        return true;
+      
+    if (root.left != null && root.left.data > root.data)
+        return false;
+      
+    if (root.right != null && root.right.data < root.data)
+        return false;
+      
+    if (!isValidBST(root.left) || !isValidBST(root.right))
+        return false;
+
+    return true;
+   
+};

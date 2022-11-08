@@ -1,0 +1,98 @@
+<script type="text/javascript">
+
+
+
+class Node{
+	constructor(data){
+		this.data = data;
+		this.next = null;
+	}
+}
+
+
+class Linked_list{
+	constructor(){
+		this.head = null;
+	}
+
+	Insert(data){
+		let newNode = new Node(data);
+
+		if(this.head === null){
+			this.head = newNode
+		}else{
+			let traverse = this.head;
+			while(traverse.next){
+				traverse = traverse.next;
+			}
+
+			traverse.next = newNode;
+		}
+	}
+
+
+	Display(){
+		let traverse = this.head;
+		while(traverse){
+			document.write(" ", traverse.data)
+			traverse = traverse.next;
+		}
+	}
+
+	AddTwoList(list1, list2){
+		let dummy = new Node(0);
+		let tail = dummy;
+
+		while(list1 != null || list2 != null){
+			if(list1 == null){
+				tail.next = list2;
+				break;
+			}
+
+			if(list2 == null){
+				tail.next = list1;
+				break;
+			}
+
+			if(list1.data >= list2.data){
+				tail.next = list2;
+				list2 = list2.next;
+			}else{
+				tail.next= list1;
+				list1  = list1.next;
+			}
+			tail = tail.next;
+		}
+
+		return dummy.next;
+	}
+
+}
+
+
+
+let list1 = new Linked_list();
+let list2 = new Linked_list();
+
+document.write("<br/> List 1 <br/>")
+list1.Insert(1);
+list1.Insert(5);
+list1.Insert(10);
+list1.Display();
+
+document.write("<br/> List 2 <br/>")
+list2.Insert(10);
+list2.Insert(12);
+list2.Insert(17);
+list2.Display();
+
+
+
+document.write("<br/> After Addition of two list <br/>")
+list1.head = list1.AddTwoList(list1.head, list2.head)
+list1.Display();
+
+
+
+
+</script>

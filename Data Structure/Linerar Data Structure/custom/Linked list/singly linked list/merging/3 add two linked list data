@@ -1,0 +1,103 @@
+<script type="text/javascript">
+
+
+
+class Node{
+	constructor(data){
+		this.data = data;
+		this.next = null;
+	}
+}
+
+
+class Linked_list{
+	constructor(){
+		this.head = null;
+	}
+
+	Insert(data){
+		let newNode = new Node(data);
+
+		if(this.head === null){
+			this.head = newNode
+		}else{
+			let traverse = this.head;
+			while(traverse.next){
+				traverse = traverse.next;
+			}
+
+			traverse.next = newNode;
+		}
+	}
+
+
+	Display(){
+		let traverse = this.head;
+		while(traverse){
+			document.write(" ", traverse.data)
+			traverse = traverse.next;
+		}
+	}
+
+}
+
+
+var addTwoNumbers = function(list1, list2){
+		let dummy = new Node(0);
+		let tail = dummy;
+
+		let carry = 0;
+
+		while(list1 != null || list2 != null || carry){
+			let sum = 0;
+			if(list1 != null){
+				sum = sum+list1.data;
+				list1 = list1.next;
+			}
+
+			if(list2 != null){
+				sum = sum + list2.data;
+				list2 = list2.next;
+			}
+
+			sum = sum + carry;
+			carry = Math.floor(sum/10);
+			let newNode = new Node(sum%10);
+			tail.next = newNode;
+			tail = tail.next;
+		}
+
+		return dummy.next;
+	}
+
+
+let list1 = new Linked_list();
+let list2 = new Linked_list();
+
+document.write("<br/> List 1 <br/>")
+
+let input1 = [9,9,9,9,9,9,9]
+for(let i of input1){
+	list1.Insert(i)
+}
+list1.Display();
+
+document.write("<br/> List 2 <br/>")
+
+let input2 = [9,9,9,9]
+
+for(let i of input2){
+	list2.Insert(i);
+
+}
+list2.Display();
+
+
+document.write("<br/> After Addition of two list <br/>")
+list1.head = addTwoNumbers(list1.head, list2.head)
+list1.Display();
+
+
+
+
+</script>

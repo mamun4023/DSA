@@ -1,0 +1,79 @@
+class Node{
+	constructor(data){
+		this.data = data;
+		this.next = null;
+	}
+}
+
+class LinkedList{
+	constructor(){
+		this.head = null;
+	}
+
+
+	Insert(data){
+		let newNode = new Node(data);
+
+		if(this.head == null){
+			this.head = newNode
+		}else{
+			let traverse = this.head;
+			while(traverse.next){
+
+				traverse = traverse.next;
+			}
+
+			traverse.next = newNode;
+		}
+	}
+
+	remove(){
+		this.head = this.head.next;
+	}
+
+	removeLast(){
+		
+		let traverse = this.head;
+
+		while(traverse.next.next){
+			traverse = traverse.next;
+		}
+
+		traverse.next =  null;
+	}
+
+	removePos(pos){
+		let i = 2;
+		let traverse = this.head;
+		
+		if(pos == 1){
+			return this.head = this.head.next;
+		}
+
+		while( i < pos){
+			traverse = traverse.next;
+			i++;
+		}
+		traverse.next = traverse.next.next;
+	}
+
+
+	Display(){
+		let traverse = this.head;
+		while(traverse){
+			document.write(traverse.data, " ");
+			traverse = traverse.next;
+		}
+	}
+}
+
+let list = new LinkedList();
+list.Insert(10);
+list.Insert(20);
+list.Insert(30);
+list.Insert(40);
+list.Insert(50);
+list.Display();
+document.write("<br/>")
+list.removePos(5);
+list.Display();

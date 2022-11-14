@@ -1,0 +1,74 @@
+
+<script type="text/javascript">
+	
+
+class Edge{
+	constructor(src, dest){
+		this.src = src;
+		this.dest = dest;
+	}
+}
+
+class Graph{
+	constructor(){
+		this.adjList = new Map();
+	}
+
+	Insert(edge){
+		const {src, dest} = edge;
+		if(this.adjList.has(src)){
+			this.adjList.get(src).push(dest)
+		}else{
+			this.adjList.set(src, [dest]);
+		}
+	}
+
+
+isCyclicUntil(vertex, recStack){
+	if(recStack.has(vertex))
+		return true;
+
+	recStack.add(vertex);
+
+	let neigbors = this.adjList.get(vertex);
+
+	for(let i in neigbors){
+		let neigh = neigbors[i];
+		if(this.isCyclicUntil(neigh, recStack))
+			return true;
+	}
+
+	recStack.delete(vertex);
+	return false;
+}
+
+ 
+ isCyclic(){
+ 	let visited = {};
+ 	let recStack = new Set();
+
+ 	let vertics = this.adjList.keys();
+
+ 	for(let vertex of vertics){
+ 		if(this.isCyclicUntil(vertex, recStack))
+ 			return true;
+ 	}
+
+ 	return false
+ }
+
+
+}
+
+
+
+let obj = new Graph();
+
+obj.Insert( new Edge('A', 'B'));
+obj.Insert( new Edge('B', 'C'));
+obj.Insert( new Edge('C', 'E'));
+console.log(obj.isCyclic());
+
+
+
+</script>

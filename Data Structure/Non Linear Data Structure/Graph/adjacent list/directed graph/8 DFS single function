@@ -1,0 +1,51 @@
+<script type="text/javascript">
+	
+
+
+class Edge{
+	constructor(src, dest){
+		this.src = src;
+		this.dest = dest;
+	}
+}
+
+
+class Graph{
+	constructor(){
+		this.adjList = new Map();
+	}
+
+
+	Inesrt(edge){
+		const {src, dest} = edge;
+		if(this.adjList.has(src)){
+			this.adjList.get(src).push(dest)
+		}else{
+			this.adjList.set(src, [dest])
+		}
+	}
+
+
+
+  Dfs(vert){
+
+    document.write(vert+ " ");
+    let neighbor = this.adjList.get(vert)
+    for(let i in neighbor){
+      let neigh = neighbor[i];
+          this.Dfs(neigh)
+        }
+
+  }
+}
+
+
+
+let obj = new Graph();
+obj.Inesrt(new Edge('A', 'B'));
+obj.Inesrt(new Edge('A', 'C'));
+obj.Inesrt(new Edge('B', 'E'));
+obj.Dfs('A');
+
+
+</script>

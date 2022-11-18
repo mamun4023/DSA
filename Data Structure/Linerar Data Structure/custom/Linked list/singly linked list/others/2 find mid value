@@ -1,36 +1,4 @@
-
-class Node{
-	constructor(data){
-		this.data = data;
-		this.next = null;
-	}
-}
-
-class LinkedList{
-	constructor(){
-		this.head = null;
-	}
-
-	insert(data){
-		let newNode = new Node(data);
-		if(this.head === null){
-			this.head = newNode;
-		}else{
-			let traverse = this.head;
-			while(traverse.next){
-				traverse = traverse.next;
-			}
-			traverse.next = newNode;
-		}
-	}
-
-	display(){
-		let traverse = this.head;
-		while(traverse){
-			document.write(traverse.data+ " ")
-			traverse  = traverse.next;
-		}
-	}
+// Example 1
 
 	middle(){
 		let i =1;
@@ -48,19 +16,20 @@ class LinkedList{
 		}
 		document.write(traverse2.next.data);
 	}
-	
-}
 
-let obj = new LinkedList();
-obj.insert(10);
-obj.insert(3);
-obj.insert(44);
-obj.insert(5);
-obj.insert(50);
-obj.insert(60);
-obj.insert(5);
-obj.insert(100);
-obj.display();
-document.write("<br/>");
-obj.middle();
 
+// Example 2
+
+	Midvalue(){
+		let traverse = this.head;
+		let after = traverse.next;
+
+		while(after.next){
+
+			traverse = traverse.next;
+			after = traverse.next;
+		}
+
+		return traverse.data;
+
+	}

@@ -1,0 +1,60 @@
+class Node{
+	constructor(data){
+		this.data = data;
+	}
+}
+
+
+class LinkedList{
+	constructor(){
+		this.head = null
+	}
+
+	Insert(data){
+		let newNode = new Node(data);
+
+		if(this.head === null){
+			this.head = newNode;
+		}else{
+			let traverse = this.head;
+
+			while(traverse.next){
+				traverse = traverse.next;
+			}
+			traverse.next = newNode;
+		}
+	}
+
+	Print(){
+		let traverse = this.head;
+		while(traverse){
+			document.write(" ", traverse.data);
+			traverse = traverse.next
+		}
+	}
+
+	Reverse(){
+
+		let prev = null
+		let next = null;
+		let current = this.head;
+
+		while(current.next){
+			next = current.next;
+			current.next = prev;
+			prev = current;
+			current = next;
+		}
+		current.next = prev;
+		this.head = current;
+	}
+}
+
+
+
+let list = new LinkedList();
+list.Insert(10);
+list.Insert(20);
+list.Insert(30);
+list.Reverse();
+list.Print();

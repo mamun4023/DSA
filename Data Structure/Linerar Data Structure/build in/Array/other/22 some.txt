@@ -1,0 +1,9 @@
+
+
+// check at least one element of an arry pass the condition
+
+let arr = [10,20,30];
+
+let result = arr.some(data=> data > 20);
+console.log(result)
+

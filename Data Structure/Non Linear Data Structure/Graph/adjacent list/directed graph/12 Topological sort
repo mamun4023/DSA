@@ -1,0 +1,104 @@
+class Edge{
+  constructor(src, dest){
+    this.src = src;
+    this.dest = dest;
+  }
+}
+
+
+class Graph{
+  constructor(){
+    this.andList = new Map();
+
+  }
+
+  Insert(edge){
+    const {src, dest} = edge;
+    if(this.andList.has(src)){
+      this.andList.get(src).push(dest)
+    }else{
+      this.andList.set(src, [dest])
+    }
+  }
+
+  helperFunction(vertex, visited, recStact){
+
+    visited[vertex] = true;
+    
+
+    let neighbors = this.andList.get(vertex);
+
+    for(let i in neighbors){
+      let neigh = neighbors[i];
+      if (!visited[neigh]){
+          this.helperFunction(neigh, visited, recStact);
+      }
+    }
+
+    
+    recStact.push(vertex);
+  }
+
+
+  TopologicalSort(){
+    let visited = {};
+    let recStact = []
+    let vertics = this.andList.keys();
+    for(let vertex of vertics){
+      if (!visited[vertex]){
+          this.helperFunction(vertex, visited, recStact);
+      }
+    }
+
+
+  
+   while(recStact.length > 0){
+      document.write(recStact.pop(), " ")
+   }
+  }
+
+
+}
+
+
+
+let obj = new Graph();
+// obj.Insert(new Edge('A', 'B'));
+// obj.Insert(new Edge('A', 'C'))
+// obj.Insert(new Edge('B', 'C'));
+// obj.Insert(new Edge('B', 'D'));
+
+
+// obj.Insert(new Edge(5, 2))
+// obj.Insert(new Edge(5, 0))
+// obj.Insert(new Edge(4, 0))
+// obj.Insert(new Edge(4, 1))
+// obj.Insert(new Edge(2, 3))
+// obj.Insert(new Edge(3, 1))
+
+
+
+// obj.Insert(new Edge(7, 5))
+// obj.Insert(new Edge(7, 6))
+// obj.Insert(new Edge(5, 2))
+// obj.Insert(new Edge(5, 4))
+// obj.Insert(new Edge(6, 2))
+// obj.Insert(new Edge(6, 3))
+// obj.Insert(new Edge(2, 1))
+// obj.Insert(new Edge(3, 1))
+// obj.Insert(new Edge(1, 0))
+
+// 7 6 3 5 4 2 1 0
+
+obj.Insert(new Edge('A', 'C'));
+obj.Insert(new Edge('A', 'D'));
+obj.Insert(new Edge('B', 'E'));
+obj.Insert(new Edge('C', 'F'));
+obj.Insert(new Edge('D', 'G'));
+obj.Insert(new Edge('E', 'G'));
+obj.Insert(new Edge('F', 'G'));
+
+
+// B E A D C F G
+
+obj.TopologicalSort()

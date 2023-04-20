@@ -1,0 +1,76 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+class Node{
+public:
+    int value;
+    Node* left;
+    Node* right;
+    Node(int data){
+        value = data;
+        left = NULL;
+        right = NULL;
+    }
+};
+
+
+class Tree{
+public:
+    Node * head = NULL;
+    void Insert(int data);
+    void Inorder(Node* node);
+};
+
+
+void HelperFuction( Node* current, Node* newNode){
+    if(newNode->value < current->value){
+        if(current->left == NULL){
+            current->left = newNode;
+        }else{
+            HelperFuction(current->left, newNode);
+        }
+    }else{
+        if(current->right == NULL){
+            current->right = newNode;
+        }else{
+            HelperFuction(current->right, newNode);
+        }
+    }
+
+}
+
+void Tree::Insert(int data){
+    Node* newNode = new Node(data);
+    if(head == NULL){
+        head = newNode;
+    }else{
+        HelperFuction(head, newNode);
+    }
+}
+
+void Tree::Inorder(Node* node){
+    if(node != NULL){
+        Inorder(node->left);
+        cout<<node->value<<" ";
+        Inorder(node->right);
+    }
+}
+
+
+
+
+int main(){
+
+    Tree obj;
+    obj.Insert(10);
+    obj.Insert(2);
+    obj.Insert(50);
+
+
+    obj.Inorder(obj.head);
+
+
+
+return 0;
+}

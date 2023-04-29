@@ -1,0 +1,24 @@
+#include <iostream>
+#include <map>
+
+using namespace std;
+
+int main()
+{
+
+map<string, int> s;
+
+s["one"] = 1;
+s["two"] = 2;
+s["three"] = 3;
+
+
+map<string, int>::iterator it;
+
+for(it = s.begin(); it != s.end(); it++){
+    cout<<"key: "<<it->first<<" Value: "<<it->second<<endl;
+}
+
+
+return 0;
+}

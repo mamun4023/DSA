@@ -1,0 +1,113 @@
+class Edge{
+	constructor(src, dest, weight){
+		this.src = src;
+		this.dest = dest;
+		this.weight = weight;
+	}
+}
+
+
+class Node{
+	constructor(dest, weight){
+		this.weight = weight;
+		this.dest = dest;
+	}
+}
+
+
+class Graph{
+	constructor(){
+		this.adjList = new Map();
+	}
+
+	Insert(edge){
+		const {src, dest, weight} = edge;
+
+		if(this.adjList.has(src)){
+			this.adjList.get(src).push(new Node(dest, weight))
+		}else{
+			this.adjList.set(src, [new Node(dest, weight)])
+			this.adjList.set(dest, [new Node(src, weight)])
+		}
+
+	}
+
+	Print(){
+		let vertics = this.adjList.keys();
+		for(let vertex of vertics){
+			let Node = this.adjList.get(vertex)
+			
+			for(let data of Node){
+				console.log(vertex, "=>", [data.dest, data.weight])
+			}
+		}
+	}
+
+	 vertexWithMinDistance(distances, visited) {
+        let minDistance = Infinity;
+        let minVertex = null;
+
+        for (let vertex in distances) {
+            let distance = distances[vertex];
+            if (distance < minDistance && !visited.has(vertex)) {
+                minDistance = distance;
+                minVertex = vertex;
+            }
+        }
+        return minVertex;
+    }
+
+	Dijstra(src){
+		 let distances = {}
+         let parents = {}
+         let visited = new Set();
+
+
+         let vertices = this.adjList.keys();
+
+
+         for(let vertex of vertices){
+         	if(vertex === src){
+         		distances[src] = 0;
+         	}else{
+         		distances[vertex] = Infinity;
+         	}
+         	parents[vertex] = null;
+         }
+
+         let currVertex = this.vertexWithMinDistance(distances, visited);
+         // console.log(currVertex)
+
+          while (currVertex !== null) {
+            let distance = distances[currVertex]
+            let neighbors = this.adjList.get(currVertex);
+            // console.log(neighbors[0])
+            for (let neighbor of neighbors) {
+                
+                // console.log(neighbor.dest)
+                let newDistance = distance + neighbor.weight;
+                if (distances[neighbor.dest] > newDistance) {
+                    distances[neighbor.dest] = newDistance;
+                    parents[neighbor.dest] = currVertex;
+                }
+            }
+            visited.add(currVertex);
+            currVertex = this.vertexWithMinDistance(distances, visited);
+        }
+
+
+         console.log(parents);
+         console.log(distances);
+
+	}
+}
+
+
+
+let obj = new Graph();
+obj.Insert(new Edge('A', 'B', 2));
+obj.Insert(new Edge('A', 'C', 3));
+obj.Insert(new Edge('B', 'D', 10));
+obj.Insert(new Edge('C', 'D', 3));
+// obj.Print();
+obj.Dijstra('A')

@@ -1,56 +1,106 @@
 
-function edge(src, dest){
-  this.src = src;
-  this.dest = dest;
+class Edge{
+	constructor(src, dest){
+		this.src = src;
+		this.dest = dest;
+	}
+}
+
+class Graph{
+	constructor(){
+	 	this.adjList = new Map();
+	 }
+
+	Insert(edge){
+		const {src, dest} = edge;
+
+		if(this.adjList.has(src)){
+			this.adjList.get(src).push(dest)
+		}else{
+			this.adjList.set(src, [dest])
+		}
+	}
+
+	BFS(startNode){
+		let visited = {};
+		let queue = [];
+
+		visited[startNode] = true;
+		queue.push(startNode);
+		
+		while(queue.length > 0){
+			let currVertex = queue.shift();
+			document.write(currVertex, " ");
+			let neigbors = this.adjList.get(currVertex);
+
+			for(let i in neigbors){
+				let neigh = neigbors[i];
+
+				if(!visited[neigh]){
+					visited[neigh] = true;
+					queue.push(neigh)
+				}
+			}
+		}
+	}
+
+
+	until(node, visited){
+		visited[node] = true;
+		document.write(node, " ");
+		let neigbors = this.adjList.get(node);
+		for(let i in neigbors){
+			let neigh = neigbors[i];
+			if(!visited[neigh]){
+				this.until(neigh, visited)
+			}
+		}
+	}
+
+	DFS(startNode){
+		let visited = {};
+		this.until(startNode, visited);
+	}
+
+	removeEdge(edge){
+		const {src, dest} = edge;
+		let neigbors = this.adjList.get(src);
+
+		if(neigbors !== undefined){
+			let filtered = neigbors.filter(e => e != dest);
+			this.adjList.delete(src)
+			this.adjList.set(src, filtered)
+
+			if(this.adjList.get(src).length === 0)
+				this.adjList.delete(src)
+	
+		}else{
+			console.log("Edge does not exits")
+		}
+	}
+
+
+	Print(){
+		let vertics = this.adjList.keys();
+		for(let vertex of vertics){
+			console.log(vertex, "=>", this.adjList.get(vertex))
+		}
+	}
 }
 
 
-var Graph = function(){
+let obj = new Graph();
+obj.Insert(new Edge('A', 'B'));
+obj.Insert(new Edge('A', 'C'));
+obj.Insert(new Edge('A', 'D'));
+obj.Insert(new Edge('C', 'F'));
+obj.Insert(new Edge('D', 'E'));
 
-  let adj = new Map();
+obj.Print();
 
-  // adding function
+console.log("===========")
+obj.removeEdge(new Edge('A', 'C'))
+// obj.removeEdge(new Edge('G', 'B'))
+// obj.removeEdge(new Edge('A', 'D'))
 
-  this.add = function(edge){
-    const {src, dest} = edge;
-    if(adj.has(src)){
-      adj.get(src).push(dest);
-    }else{
-      adj.set(src, [dest])
-    }
-  }
-
-// remove edge 
-  this.remove = function(edge){
-    const {src, dest} = edge;
-    let srcList = adj.get(src);
-    srcList = srcList.filter(e => e !== dest);
-
-    if(srcList.length === 0){
-      adj.delete(src);
-      console.log("edge removed")
-    }else{
-      console.log("No (" +src+ "-->" +dest+ ") edge not exist ")
-    }
-
-    return true;
-  }
-  
-
-
-  this.display= function(){
-    for(let key of adj.keys()){
-      console.log(key + "-->"+ adj.get(key))
-    }
-  }
-}
-
-
-var obj = new Graph();
-obj.add(new edge('A', 'B'));
-obj.add(new edge('B', 'C'));
-obj.add(new edge('C', 'A'));
-obj.remove(new edge('A','C'))
-
-obj.display();
-
+obj.Print();

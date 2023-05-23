@@ -1,86 +1,63 @@
 
-<script type="text/javascript">
-
-
-
-
-class Graph{
-	constructor(noOfVertics){
-		this.noOfVertics = noOfVertics;
-		this.adjList = new Map();
+class Edge{
+	constructor(src, dest){
+		this.src = src;
+		this.dest = dest;
 	}
-
-	addVertex(v){
-		this.adjList.set(v, []);
-	}
-
-	addEdge(v, w){
-		this.adjList.get(v).push(w);
-		this.adjList.get(w).push(v);
-	}
-
-
-  print(){
-  	var get_key = this.adjList.keys();
-  	
-  	for(let i  of get_key){
-  		var get_value = this.adjList.get(i);
-  		var result = "";
-  		for(let j of get_value){
-  			result = result + j;
-  		}
-  		console.log( i+ " -> " +result);
-  	}	
-  }	
-
-
-
-// BFS traversal Algorithm 
-
- BFS(startNode){
- 	var visited = {};
- 	var Queue = [];
- 	visited[startNode] = true;
- 	Queue.push(startNode);
-
- 	while(Queue.length > 0)
- 	{
- 		var getElement = Queue.shift();
- 		document.write(getElement);
-
- 		var get_list = this.adjList.get(getElement);
-
- 		for(let i in get_list){
- 			var neigh = get_list[i];
- 			if(!visited[neigh]){
- 				visited[neigh] = true;
- 				Queue.push(neigh);
- 			}
- 		}
- 	}
- }
-}   
-
-
-obj = new Graph(6);
-var vertics = ['A','B','C','D','E','F'];
-
-for(var i = 0; i<vertics.length; i++){
-	obj.addVertex(vertics[i]);
 }
 
-obj.addEdge('A', 'B'); 
-obj.addEdge('A', 'D'); 
-obj.addEdge('A', 'E'); 
-obj.addEdge('B', 'C'); 
-obj.addEdge('D', 'E'); 
-obj.addEdge('E', 'F'); 
-obj.addEdge('E', 'C'); 
-obj.addEdge('C', 'F'); 
+class Graph{
+	 constructor(){
+	 	this.adjList = new Map();
+	 }
 
-obj.print();
+	Insert(edge){
+		const {src, dest} = edge;
 
+		if(this.adjList.has(src)){
+			this.adjList.get(src).push(dest)
+		}else{
+			this.adjList.set(src, [dest])
+		}
+	}
+
+	BFS(startNode){
+		let visited = {};
+		let queue = [];
+		visited[startNode] = true;
+		queue.push(startNode);
+
+		while(queue.length > 0){
+			let currVertex = queue.shift();
+			document.write(currVertex, " ");
+			let neigbors = this.adjList.get(currVertex);
+
+			for(let i in neigbors){
+				let neigh = neigbors[i];
+
+				if(!visited[neigh]){
+					visited[neigh] = true;
+					queue.push(neigh)
+				}
+			}
+		}
+	}
+
+	Print(){
+		let vertics = this.adjList.keys();
+		console.log(vertics)
+	}
+}
+
+
+let obj = new Graph();
+obj.Insert(new Edge('A', 'B'));
+obj.Insert(new Edge('A', 'C'));
+obj.Insert(new Edge('B', 'D'));
+obj.Insert(new Edge('C', 'E'));
+
+obj.Print();
 obj.BFS('A');
-// A B D E C F
 
-</script>
+
+

@@ -1,0 +1,113 @@
+
+
+
+
+
+class Edge{
+  constructor(src, dest){
+    this.src = src;
+    this.dest = dest;
+  }
+}
+
+
+class Graph{
+  constructor(){
+    this.adjList = new Map();
+  }
+
+
+  Insert(edge){
+    const {src, dest} = edge;
+    if(this.adjList.has(src))
+      this.adjList.get(src).push(dest);
+    else
+      this.adjList.set(src, [dest])
+  }
+
+
+
+  Print(){
+    let vertics = this.adjList.keys();
+    for(let vertex of vertics){
+      console.log(vertex, "-->", this.adjList.get(vertex))
+    }
+  }
+
+  Helper(vertex, visited, recStack){
+    
+    visited[vertex] =  true;
+    let neighbors = this.adjList.get(vertex);
+    for(let i in neighbors){
+      let neigh = neighbors[i];
+      if(!visited[neigh]){
+        this.Helper(neigh, visited, recStack);
+      }
+    }
+
+    recStack.push(vertex);
+    return false;
+  }
+
+  TopologicalSorting(){
+    let visited = {};
+    let recStack = [];
+
+    let vertics = this.adjList.keys();
+    for(let vertex of vertics){
+      if(!visited[vertex]){
+        this.Helper(vertex, visited, recStack);
+      }
+    }
+
+    while(recStack.length > 0){
+      document.write(recStack.pop(), " ");
+    }
+  }
+
+
+  Degree(){
+    let vertics = this.adjList.keys();
+
+    for(let vertex of vertics){
+    
+      let count = 0;
+      let neighbors = this.adjList.get(vertex);
+      for(let i in neighbors){
+        let neigh = neighbors[i];
+
+        let vertics2 = this.adjList.get(neigh);
+
+        for(let i in vertics2){
+           let neigh2 = vertics2[i];
+           if(vertex == neigh2)
+            count+=1
+        }
+      }
+        console.log(vertex, "outDegree", this.adjList.get(vertex).length, " inDegree", count)
+
+    }
+  }
+
+}
+
+
+let obj = new Graph();
+
+// obj.Insert(new Edge('A', 'B'));
+// obj.Insert(new Edge('A', 'C'));
+// obj.Insert(new Edge('B', 'A'));
+// obj.Insert(new Edge('B', 'C'));
+// obj.Insert(new Edge('C', 'A'));
+// obj.Insert(new Edge('C', 'B'));
+
+
+obj.Insert(new Edge('A', 'B'));
+obj.Insert(new Edge('A', 'C'));
+obj.Insert(new Edge('C', 'B'));
+obj.Insert(new Edge('D', 'A'));
+
+
+obj.Print();
+obj.Degree();
+// obj.TopologicalSorting();

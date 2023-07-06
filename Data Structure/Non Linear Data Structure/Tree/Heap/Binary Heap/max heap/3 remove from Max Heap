@@ -1,0 +1,87 @@
+
+class MaxHeap{
+	constructor(){
+		this.List = [];
+	}
+
+	Insert(data){
+		if(this.List.length == 0){
+			this.List.push(data)
+		}else{
+
+			this.List.push(data);
+
+			// heapify
+			for(let i = parseInt(this.List.length/2 -1); i >= 0; i--){
+				this.Heapify(this.List, this.List.length, i)
+			}
+		}
+
+	}
+
+	Heapify(arr, n, i){
+		let largestIndex = i;
+		let LeftIndex = 2 * i + 1;
+		let rightIndex = 2 * i + 2 
+
+
+		if(LeftIndex < n && arr[LeftIndex] > arr[largestIndex]){
+			largestIndex = LeftIndex;
+		}
+
+
+		if(rightIndex < n && arr[rightIndex] > arr[largestIndex]){
+			largestIndex = rightIndex
+		}
+
+
+		if(largestIndex != i){
+			[arr[i], arr[largestIndex]] = [arr[largestIndex], arr[i]]
+
+			this.Heapify(arr, n, largestIndex)
+		}
+	}
+
+	remvoe(data){
+		let size = this.List.length;
+
+		let index =  this.List.indexOf(data)
+
+		let temp = this.List[index];
+	 	this.List[index] = this.List[size -1];
+	 	this.List[size-1] = temp;
+ 
+
+		// remove the last elemtn
+		this.List.splice(size-1, 1);
+
+		 for(let i = parseInt(this.List.length/2-1); i>=0; i--){
+		 		this.Heapify(this.List, this.List.length, i)
+		 }
+
+	}
+
+
+	list(){
+		return this.List
+	}
+	getmax(){
+		return this.List[0]
+	}
+}
+
+
+let obj = new MaxHeap();
+obj.Insert(10);
+obj.Insert(25);
+obj.Insert(40);
+obj.Insert(50);
+obj.Insert(70);
+obj.Insert(700);
+
+console.log(obj.getmax())
+console.log(obj.list())
+
+obj.remvoe(70);
+console.log(obj.list())
+

@@ -58,13 +58,8 @@ let LinkedList = function(){
     if(this.head === null){
       this.head = newNode;
     }else{
-      let traverse = this.head;
-
-      while(traverse.next !== null){
-
-        traverse = traverse.next;
-      }
-      traverse.next = newNode;
+      newNode.next = this.head;
+      this.next = newNode;
     }
   }
 

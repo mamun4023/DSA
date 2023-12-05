@@ -36,3 +36,50 @@ obj.insert(10);
 obj.insert(1000);
 obj.insert(4000);
 obj.print();
+
+
+
+
+============= Functinal Implementation ===============
+
+
+let Node = function(data){
+    this.data = data;
+    this.next = null;
+}
+
+
+let LinkedList = function(){
+
+  this.head = null;
+
+  this.insert =(data)=>{
+    let newNode = new Node(data);
+    if(this.head === null){
+      this.head = newNode;
+    }else{
+      let traverse = this.head;
+
+      while(traverse.next !== null){
+
+        traverse = traverse.next;
+      }
+      traverse.next = newNode;
+    }
+  }
+
+
+  this.Print =()=>{
+    let traverse = this.head;
+    while(traverse){
+      document.write(traverse.data, " ")
+      traverse = traverse.next;
+    }
+  }
+}
+
+
+let obj = new LinkedList();
+obj.insert(10);
+obj.insert(20);
+obj.Print()

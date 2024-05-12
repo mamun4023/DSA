@@ -20,7 +20,7 @@
   	}
   ]
 
-  // remove the data from array
+  // return the object item from array that are does not have "day" = "Sunday"
   const data = arr.filter(d => d.day !== "Sunday")
 
 

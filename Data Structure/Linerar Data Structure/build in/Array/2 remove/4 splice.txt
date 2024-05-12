@@ -1,12 +1,5 @@
 
-<script type="text/javascript">
-
 let arr = ['A','B','C'];
-
 // delete.arr['C']; not work
-
 arr.splice(0,2,"dd");    // remove 2 and add dd 
 document.write( arr);
-
-
-</script>

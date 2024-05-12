@@ -1,7 +1,3 @@
 
-<script type="text/javascript">
-
 let arr = ["A", "B", "C", "D"];
 document.write(arr.indexOf('C'));
-
-</script>

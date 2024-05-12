@@ -1,12 +1,5 @@
 
-<script type="text/javascript">
-
 let arr = ['A','B','C'];
 arr.unshift('DD');   // add item at begining 
 
-document.write(arr);
-
-
-
-
-</script>
+document.write(arr); // ['DD','A','B','C'];

@@ -1,0 +1,11 @@
+reverseTree(node){
+		if(node == null)
+			return 0;
+		else{
+			 this.reverseTree(node.left)
+			 this.reverseTree(node.right);
+			 let temp = node.left;
+			 node.left = node.right;
+			 node.right = temp
+		}
+	}

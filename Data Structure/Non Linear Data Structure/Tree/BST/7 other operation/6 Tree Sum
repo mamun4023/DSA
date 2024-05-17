@@ -1,0 +1,10 @@
+	treeSum(node){
+		if(node == null)
+			return 0;
+		else{
+			let leftSum = this.treeSum(node.left);
+			let rightSum = this.treeSum(node.right);
+
+			return node.data + leftSum + rightSum
+		}
+	}

@@ -1,9 +1,0 @@
-	treeMax(node){
-		if(node == null)
-			return 0;
-		else{
-			let leftMax = this.treeMax(node.left)
-			let rightMax = this.treeMax(node.right);
-			return Math.max(node.data, leftMax, rightMax)
-		}
-	}

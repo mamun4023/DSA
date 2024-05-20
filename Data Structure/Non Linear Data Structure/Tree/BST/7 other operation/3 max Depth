@@ -1,12 +1,16 @@
-maxDepth(node){
-	if(node == null) return 0;
-	
-	let lDepth = this.maxDepth(node.left);
-	let RDepth = this.maxDepth(node.right);
-	
-	if(lDepth < RDepth)
-		return RDepth+1;
-	else
-		return lDepth+1;
+	maxDepth(node){
+		if(node == null)
+			return 0;
 
-}
+		if(node.left == null && node.right == null)
+			return 1;
+
+		if(node.left == null)
+			return this.maxDepth(node.right)+1
+
+		if(node.right == null)
+			return this.maxDepth(node.left)+1
+
+
+		return Math.min(this.maxDepth(node.left), this.maxDepth(node.right))+1
+	}

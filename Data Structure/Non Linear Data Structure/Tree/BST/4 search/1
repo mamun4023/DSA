@@ -1,13 +1,13 @@
 
 search(data , node){
-		//empty tree
-		if(node == null) return false;
+	//empty tree
+	if(node == null) return false;
 
-		if(data < node.data){
+	if(data < node.data){
 			return this.search(data, node.left);
-		}else if(data > node.data){
-			return this.search(data, node.right);
-		}else{
-			return true;
-		}
+	}else if(data > node.data){
+		return this.search(data, node.right);
+	}else{
+		return true;
 	}
+}

@@ -1,0 +1,92 @@
+
+class Graph{
+    constructor(v){
+        this.adjMatix = []
+        for(let i = 0; i < v; i++){
+            this.adjMatix[i] = [];
+            for(let j = 0; j < v; j++){
+                this.adjMatix[i][j] = 0
+            }
+        }
+
+    }
+
+   
+
+    addEdge(src, dest, weight){
+        this.adjMatix[src][dest] = weight
+        this.adjMatix[dest][src] = weight
+    }
+
+    removeEdge(src, dest){
+        this.adjMatix[src][dest] = 0;
+        this.adjMatix[src][dest] = 0;
+    }
+
+    getMatrix(){
+        return this.adjMatix
+    }
+
+
+    BFS(startVertex){
+        let visted = {}
+        let queue = [];
+        visted[startVertex] = true
+        queue.push(startVertex)
+
+        while(queue.length > 0){
+            let currVertex = queue.shift();
+
+            document.write(currVertex, " ")
+            for(let i = 0; i < this.adjMatix.length; i++){
+                let neigh = this.adjMatix[currVertex][i]
+                if(neigh == 1 && !visted[i]){
+                    visted[i] = true
+                    queue.push(i)
+                }
+            }
+        }
+
+    }
+
+    DFS(startVertex){
+        let visited = {}
+        this.untilDFS(startVertex, visited)
+    }
+
+    untilDFS(currVertex, visited){
+        visited[currVertex] = true
+        document.write(currVertex, " ");
+
+        for(let i = 0; i < this.adjMatix.length; i++){
+            let neigh = this.adjMatix[currVertex][i]
+            if(neigh !== 0 && !visited[i]){
+                this.untilDFS(i, visited)
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+
+let obj = new Graph(6)
+
+obj.addEdge(0, 1, 10);
+obj.addEdge(0, 2, 20);
+obj.addEdge(1, 0, 20);
+obj.addEdge(1, 5, 3);
+obj.addEdge(2, 0, 30);
+obj.addEdge(2, 3, 1);
+obj.addEdge(3, 2, 5);
+obj.addEdge(3, 4, 49);
+obj.addEdge(4, 3, 3);
+
+obj.DFS(0)
+
+
+

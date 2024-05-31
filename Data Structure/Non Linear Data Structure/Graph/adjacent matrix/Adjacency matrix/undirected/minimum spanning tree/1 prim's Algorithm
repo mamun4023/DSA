@@ -1,7 +1,5 @@
-<script type="text/javascript">
 	
 let V = 5;
-
 
 function printMST(parent, graph)
 {
@@ -64,6 +62,3 @@ primMST(graph, 0);
 
 
 //https://www.geeksforgeeks.org/prims-minimum-spanning-tree-mst-greedy-algo-5/
-
-
-</script>

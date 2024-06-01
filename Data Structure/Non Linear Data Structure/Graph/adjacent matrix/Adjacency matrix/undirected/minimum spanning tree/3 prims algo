@@ -1,0 +1,56 @@
+function primsAlgorithm(adjMatrix) {
+    const numNodes = adjMatrix.length;
+    const visited = new Array(numNodes).fill(false);
+    const parent = new Array(numNodes).fill(null);
+    const weights = new Array(numNodes).fill(Infinity);
+
+    // Start from the first node
+    weights[0] = 0;
+
+    for (let count = 0; count < numNodes - 1; count++) {
+        // set default
+        let minWeight = Infinity;
+        let minIndex = -1;
+
+        // Find the minimum weight and minIndex from the set of vertices not visited yet
+        for (let v = 0; v < numNodes; v++) {
+            if (!visited[v] && weights[v] < minWeight) {
+                minWeight = weights[v];
+                minIndex = v;
+            }
+        }
+
+        // set vertex is visitede
+        visited[minIndex] = true;
+
+        // Update the weight and parent index of the adjacent vertices of the chosen vertex
+        for (let v = 0; v < numNodes; v++) {
+            if (adjMatrix[minIndex][v] && !visited[v] && adjMatrix[minIndex][v] < weights[v]) {
+                weights[v] = adjMatrix[minIndex][v];
+                parent[v] = minIndex;
+            }
+        }
+    }
+
+    // Print the constructed MST
+    const mst = [];
+    for (let i = 1; i < numNodes; i++) {
+        mst.push([parent[i], i, adjMatrix[i][parent[i]]]);
+    }
+    return mst;
+}
+
+// Example usage:
+const adjMatrix = [
+    [0, 20, 10, 0, 0],
+    [20, 0, 0 , 5, 5],
+    [10, 0, 0, 5, 0],
+    [0, 5, 5, 0, 30],
+    [0, 5, 0, 30, 0]
+];
+
+const mst = primsAlgorithm(adjMatrix);
+console.log("Edges in the Minimum Spanning Tree:");
+mst.forEach(edge => {
+    console.log(`Edge from ${edge[0]} to ${edge[1]} with weight ${edge[2]}`);
+});

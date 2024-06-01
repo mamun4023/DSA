@@ -1,0 +1,59 @@
+
+
+function printSolution(distances){
+    document.write("Vertex Distance from Source  <br>");
+    for(let i = 0; i < distances.length; i++){
+        document.write(i + " ---> " +distances[i] + "<br>");
+    }
+}
+
+
+function minDistance(distances,visited){
+    
+    let minDistance = Infinity;
+    let minIndex = -1;
+    
+    for(let v = 0; v < distances.length; v++){
+        if (!visited[v] && distances[v] <= minDistance){
+            minDistance = distances[v];
+            minIndex = v;
+        }
+    }
+    return minIndex;
+}
+
+
+
+function dijkstra(graph, startVertex){
+    let len = graph.length;
+    let distances = new Array(len).fill(Infinity);
+    let visited = new Array(len).fill(false);
+    
+    distances[startVertex] = 0;
+    
+    for(let count = 0; count < len - 1; count++){
+        let minIndex = minDistance(distances, visited);
+        visited[minIndex] = true;
+        
+        for(let v = 0; v < len; v++){
+            if (!visited[v] && graph[minIndex][v] && (distances[minIndex] + graph[minIndex][v]) < distances[v]){
+                distances[v] = distances[minIndex] + graph[minIndex][v];
+            }
+        }
+    }
+    
+    printSolution(distances);
+}
+
+// adjacency Matrix 
+let graph = [
+    [0, 20, 10, 0, 0],
+    [20, 0, 0 , 5, 5],
+    [10, 0, 0, 5, 0],
+    [0, 5, 5, 0, 30],
+    [0, 5, 0, 30, 0]
+];
+
+dijkstra(graph, 0);
+
+

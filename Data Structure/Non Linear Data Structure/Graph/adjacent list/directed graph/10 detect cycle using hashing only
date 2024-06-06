@@ -1,7 +1,4 @@
 
-<script type="text/javascript">
-	
-
 class Edge{
 	constructor(src, dest){
 		this.src = src;
@@ -42,7 +39,7 @@ isCyclicUntil(vertex, recStack){
 	return false;
 }
 
- 
+
  isCyclic(){
  	let visited = {};
  	let recStack = new Set();
@@ -61,14 +58,9 @@ isCyclicUntil(vertex, recStack){
 }
 
 
-
 let obj = new Graph();
-
 obj.Insert( new Edge('A', 'B'));
 obj.Insert( new Edge('B', 'C'));
 obj.Insert( new Edge('C', 'E'));
 console.log(obj.isCyclic());
 
-
-
-</script>

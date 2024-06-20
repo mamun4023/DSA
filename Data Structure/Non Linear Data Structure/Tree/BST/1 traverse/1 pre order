@@ -8,7 +8,6 @@
 	}
 
 
-	
 	// without recurssion
 	PreOrder(node){
 		var stack = [node];

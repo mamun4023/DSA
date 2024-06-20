@@ -1,16 +1,17 @@
-	// with reccursion
-
-	postOrder(node){ 
-		if(node != null){
-			this.Inorder(node.left);
-			this.Inorder(node.right);
-      document.write(node.data + " ");
-		}
+// with reccursion
+postOrder(node){ 
+	if(node != null){
+		this.Inorder(node.left);
+		this.Inorder(node.right);
+      		document.write(node.data + " ");
 	}
+}
 
-	// without reccursion
+
+
+// without reccursion
 	
-     postOrder(root){
+postOrder(root){
         // Two stacks as used in explanation
         // Create two stacks
         var s1 = [];

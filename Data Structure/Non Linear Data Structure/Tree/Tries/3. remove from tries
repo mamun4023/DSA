@@ -1,0 +1,82 @@
+class TrieNode {
+  constructor() {
+      this.children = {};
+      this.isEndOfWord = false;
+  }
+}
+
+class Trie {
+  constructor() {
+      this.root = new TrieNode();
+  }
+
+  insert(word) {
+      let node = this.root;
+      for (let char of word) {
+          if (!node.children[char]) {
+              node.children[char] = new TrieNode();
+          }
+          node = node.children[char];
+      }
+      node.isEndOfWord = true;
+  }
+
+  remove(word) {
+      if (!this.search(word)) {
+          console.log(`Word "${word}" not found in the trie.`);
+          return;
+      }
+      this._remove(this.root, word, 0);
+  }
+
+  _remove(node, word, depth) {
+      if (!node) return null;
+
+      // If we have reached the end of the word
+      if (depth === word.length) {
+          // This node is no longer the end of the word
+          node.isEndOfWord = false;
+
+          // If the node has no other children, delete it
+          if (Object.keys(node.children).length === 0) {
+              node = null;
+          }
+
+          return node;
+      }
+
+      const char = word[depth];
+      node.children[char] = this._remove(node.children[char], word, depth + 1);
+
+      // If the current node has no children and it's not the end of another word, delete it
+      if (Object.keys(node.children).length === 0 && !node.isEndOfWord) {
+          node = null;
+      }
+
+      return node;
+  }
+
+  search(word) {
+      let node = this.root;
+      for (let char of word) {
+          if (!node.children[char]) {
+              return false;
+          }
+          node = node.children[char];
+      }
+      return node.isEndOfWord;
+  }
+}
+
+// Example usage
+let trie = new Trie();
+trie.insert("hello");
+trie.insert("hell");
+console.log(trie)
+// trie.insert("heaven");
+
+// console.log(trie.search("hello")); // true
+// trie.remove("hello");
+// console.log(trie.search("hello")); // false
+// console.log(trie.search("hell"));  // true
+// console.log(trie.search("heaven")); // true

@@ -1,0 +1,64 @@
+
+
+=============================== brute force technique ==================
+
+const canConstruct = (target, wordBank) => {
+    if (target === "") return true;
+
+    for (let word of wordBank) {
+        if (target.indexOf(word) === 0) {
+            const suffix = target.slice(word.length);
+            if (canConstruct(suffix, wordBank)) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+};
+
+let target = "leetcode"
+let wordBank = ["leet","code"]
+console.log(canConstruct("leetcode", ["leet","code"])); // true
+console.log(canConstruct("catsandog", ["cats","dog","sand","and","cat"])); // true
+
+
+
+
+// m = target sum
+// n = wordBank.length;
+// brute force
+// time : O(n^m * m)
+// space O(m^2)
+
+
+=========================== DP Technique ========================
+
+
+const canConstruct = (target, wordBank, memo = {}) => {
+    if (target === "") return true;
+
+    for (let word of wordBank) {
+        if (target.indexOf(word) === 0) {
+            const suffix = target.slice(word.length);
+            if (canConstruct(suffix, wordBank, memo)) {
+                memo[target] = true
+                return true;
+            }
+        }
+    }
+    memo[target] = false
+    return false;
+};
+
+let target = "leetcode"
+let wordBank = ["leet","code"]
+console.log(canConstruct("leetcode", ["leet","code"])); // true
+console.log(canConstruct("catsandog", ["cats","dog","sand","and","cat"])); // true
+
+
+// m = target sum
+// n = wordBank.length;
+// brute force
+// time : O(n * m^2)
+// space O(m^2)

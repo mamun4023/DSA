@@ -1,0 +1,74 @@
+
+=============================== Brute force technique ===========================
+
+const bestSum = (targetSum, numbers)=>{
+   
+    if(targetSum === 0) return [];
+    if(targetSum < 0) return null;
+
+    let shortestCombination = null;
+
+    for(let num of numbers){
+        let remainder = targetSum - num;
+        const remainderCombination = bestSum(remainder, numbers);
+        if(remainderCombination != null){
+            let combination =  [...remainderCombination, num];
+            if(shortestCombination == null || combination.length < shortestCombination.length){
+                shortestCombination = combination
+            }
+        }
+    }
+
+    return shortestCombination
+}
+
+
+
+console.log(bestSum(7, [2, 3]))
+console.log(bestSum(8, [2, 3, 5]))
+
+
+// m = target sum
+// n = numbers.length;
+// brute force
+// time : O(n^m * m)
+// space O(m^2)
+
+
+
+
+=============================== DP technique ===========================
+
+
+const bestSum = (targetSum, numbers, memo = {}) => {
+    if (targetSum in memo) return memo[targetSum];
+    if (targetSum === 0) return [];
+    if (targetSum < 0) return null;
+
+    let shortestCombination = null;
+
+    for (let num of numbers) {
+        let remainder = targetSum - num;
+        const remainderCombination = bestSum(remainder, numbers, memo);
+        if (remainderCombination != null) {
+            let combination = [...remainderCombination, num];
+            if (shortestCombination == null || combination.length < shortestCombination.length) {
+                shortestCombination = combination;
+            }
+        }
+    }
+    memo[targetSum] = shortestCombination;
+    return shortestCombination;
+};
+
+console.log(bestSum(7, [2, 3]));
+console.log(bestSum(8, [2, 3, 5]));
+console.log(bestSum(100, [2, 3, 50, 1]));
+
+
+// m = target sum
+// n = numbers.length;
+
+// brute force
+// time : O(n* m^2)
+// space O(m^2)

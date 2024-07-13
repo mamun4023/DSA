@@ -1,9 +1,0 @@
-
-<script type="text/javascript">
-
-
-var txt = "Chapter 10";
-txt.anchor("chap10");
-console.log(txt.anchor("chap10"));
-
-</script>

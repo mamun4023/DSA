@@ -1,8 +1,0 @@
-<script type="text/javascript">
-
-
-// Formats a number to x length
-var num = 13.3714;
-var n = num.toPrecision(3);
-console.log(n);
-</script>

@@ -1,9 +1,0 @@
-<script type="text/javascript">
-	
-
-
-var x = 3+3;
-debugger;    
-console.log(x);
-
-</script>

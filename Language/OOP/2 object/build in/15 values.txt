@@ -1,9 +1,0 @@
-<script type="text/javascript">
-	
-	const obj1 = {
-		a : "rRahul",
-		b : 0,
-		c : false
-	};
- 	document.write(Object.values(obj1))
-</script>

@@ -1,7 +1,0 @@
-<script type="text/javascript">
-
-
-// Display a number that exceeds the limit of a floating point number
-console.log(Number.Infinity)
-
-</script>

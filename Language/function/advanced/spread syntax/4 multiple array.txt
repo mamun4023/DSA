@@ -1,8 +1,0 @@
-<script type="text/javascript">
-
-let arr1 = [2,3,4,5];
-let arr2 = [10,2,100];
-// use multiple array
-alert(Math.max(...arr1, ...arr2));
-
-</script>   

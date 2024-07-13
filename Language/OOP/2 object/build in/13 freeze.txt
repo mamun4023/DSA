@@ -1,8 +1,0 @@
-<script type="text/javascript">
-
-const obj1 = {property1: 'freeze'};
-const obj2 = Object.freeze(obj1);
-obj2.property1 = "new_data";
-console.log(obj2.property1);
-
-</script>

@@ -1,8 +1,0 @@
-<script type="text/javascript">
-
-
-// Returns the primitive value of a numbe
-var num = 15;
-var n = num.valueOf();
-console.log(n);
-</script>

@@ -1,3 +1,0 @@
-Points to remember
-We cannot create an instance of Abstract Class.
-It reduces the duplication of code.

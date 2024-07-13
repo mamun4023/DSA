@@ -1,9 +1,0 @@
-<script type="text/javascript">
-
-
-  var str = "Visit W3Schools!";
-  var patt1 = /W3S/i;
-  var res = patt1.ignoreCase;
-
-  console.log(res);
-</script>

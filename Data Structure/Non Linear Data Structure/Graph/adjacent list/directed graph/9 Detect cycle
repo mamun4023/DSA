@@ -1,7 +1,4 @@
 
-<script type="text/javascript">
-	
-
 class Edge{
 	constructor(src, dest){
 		this.src = src;
@@ -73,4 +70,38 @@ console.log(obj.isCyclic());
 
 
 
-</script>
+
+
+
+// better version 
+isCyclic() {
+  const visited = new Set();
+  const recStack = new Set();
+
+  for (let vertex of this.adjList.keys()) {
+    if (this.isCyclicHelper(vertex, visited, recStack)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+isCyclicHelper(vertex, visited, recStack) {
+  if (recStack.has(vertex)) return true;
+  if (visited.has(vertex)) return false;
+
+  visited.add(vertex);
+  recStack.add(vertex);
+
+  const neighbors = this.adjList.get(vertex) || [];
+  for (let neigh of neighbors) {
+    if (this.isCyclicHelper(neigh, visited, recStack)) {
+      return true;
+    }
+  }
+
+  recStack.delete(vertex);
+  return false;
+}
+
+

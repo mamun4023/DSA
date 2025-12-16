@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <vector>
 #include <map>
@@ -39,7 +38,6 @@ class Graph{
        }
    }
    
-   
    void BFS(string startNode){
         map<string, bool> visited;
         queue<string> myQueue;
@@ -59,17 +57,33 @@ class Graph{
             }
         }
    }
+   
+  void DFS(string startNode){
+      map<string, bool> visited;
+      helper(startNode, visited);
+  }
+   
+  void helper(string node, map<string, bool>&visited){
+      visited[node] = true;
+      cout<<node <<" ";
+       
+      for(string neigh : adjList[node]){
+        
+          if(!visited[neigh]){
+              helper(neigh, visited);
+          }
+      }
+  }
 };
 
 int main()
 {
-    
     Graph obj;
-     obj.insert(Edge("A", "C"));
-      obj.insert(Edge("A", "B"));
-       obj.insert(Edge("B", "A"));
-     obj.display();
-     obj.BFS("A");
+    obj.insert(Edge("A", "B"));
+    obj.insert(Edge("A", "C"));
+    obj.insert(Edge("B", "D"));
+    obj.display();
+    obj.BFS("A");
   
     return 0;
 }

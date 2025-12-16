@@ -1,0 +1,75 @@
+
+#include <iostream>
+#include <vector>
+#include <map>
+#include<queue> 
+
+using namespace std;
+
+class Edge {
+public:
+    string src;
+    string dest;
+
+    Edge(string s, string d) {
+        src = s;
+        dest = d;
+    }
+};
+
+
+class Graph{
+    public:
+    map<string, vector<string>> adjList;
+
+    
+   void insert(const Edge& edge){
+        adjList[edge.src].push_back(edge.dest);
+    }
+    
+   void display(){
+       for(auto it = adjList.begin(); it != adjList.end(); it++){
+           cout<<it->first <<"-->";
+          for(auto x : it->second){
+           
+              cout<<x << " ";
+          }
+           
+           cout<<endl;
+       }
+   }
+   
+   
+   void BFS(string startNode){
+        map<string, bool> visited;
+        queue<string> myQueue;
+        visited[startNode] = true;
+        myQueue.push(startNode);
+        
+        while(myQueue.size() > 0){
+            string node = myQueue.front();
+            myQueue.pop();
+            cout<<node <<" ";
+            
+            for(auto x : adjList[node]){
+                if(!visited[x]){
+                    visited[x] = true;
+                    myQueue.push(x);
+                }
+            }
+        }
+   }
+};
+
+int main()
+{
+    
+    Graph obj;
+     obj.insert(Edge("A", "C"));
+      obj.insert(Edge("A", "B"));
+       obj.insert(Edge("B", "A"));
+     obj.display();
+     obj.BFS("A");
+  
+    return 0;
+}

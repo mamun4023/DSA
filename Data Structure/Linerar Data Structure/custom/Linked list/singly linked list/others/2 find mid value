@@ -1,35 +1,15 @@
-// Example 1
+    findMiddle(head) {
+          if (!head) return null;
 
-	middle(){
-		let i =1;
-		let traverse = this.head;
-		let count = 1;
-		while(traverse.next){
-			count++;
-			traverse = traverse.next;
-		}
-		let mid = Math.floor(count/2);
-		let traverse2 = this.head;
-		while(traverse2.next && i < mid){
-			traverse2 = traverse2.next;
-			i++;
-		}
-		document.write(traverse2.next.data);
-	}
+          let slow = head;
+          let fast = head;
 
+          // Move fast twice as fast as slow
+          while (fast.next !== null) {
+            slow = slow.next;
+            fast = fast.next.next;
+          }
 
-// Example 2
-
-	Midvalue(){
-		let traverse = this.head;
-		let after = traverse.next;
-
-		while(after.next){
-
-			traverse = traverse.next;
-			after = traverse.next;
-		}
-
-		return traverse.data;
-
-	}
+          // slow is now at the middle
+          document.write(slow.value, " ")
+    }

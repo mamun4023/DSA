@@ -1,0 +1,71 @@
+class MaxHeap {
+  constructor() {
+    this.heap = [];
+  }
+
+  // Helper methods to get parent/child indices
+  getParentIndex(i) { return Math.floor((i - 1) / 2); }
+  getLeftChildIndex(i) { return 2 * i + 1; }
+  getRightChildIndex(i) { return 2 * i + 2; }
+
+  insert(value) {
+    this.heap.push(value);
+    this.bubbleUp(this.heap.length - 1);
+  }
+
+  bubbleUp(index) {
+    while (index > 0) {
+      let parentIndex = this.getParentIndex(index);
+      if (this.heap[index] <= this.heap[parentIndex]) break;
+
+      // Swap
+      [this.heap[index], this.heap[parentIndex]] = [this.heap[parentIndex], this.heap[index]];
+      index = parentIndex;
+    }
+  }
+
+  extractMax() {
+    if (this.heap.length === 0) return null;
+    if (this.heap.length === 1) return this.heap.pop();
+
+    const max = this.heap[0];
+    this.heap[0] = this.heap.pop();
+    this.bubbleDown(0);
+    return max;
+  }
+
+  bubbleDown(index) {
+    while (true) {
+      let left = this.getLeftChildIndex(index);
+      let right = this.getRightChildIndex(index);
+      let largest = index;
+
+      if (left < this.heap.length && this.heap[left] > this.heap[largest]) {
+        largest = left;
+      }
+      if (right < this.heap.length && this.heap[right] > this.heap[largest]) {
+        largest = right;
+      }
+
+      if (largest === index) break;
+
+      // Swap
+      [this.heap[index], this.heap[largest]] = [this.heap[largest], this.heap[index]];
+      index = largest;
+    }
+  }
+
+  peek() {
+    return this.heap.length > 0 ? this.heap[0] : null;
+  }
+}
+
+// Example Usage:
+const mh = new MaxHeap();
+mh.insert(40);
+mh.insert(100);
+mh.insert(30);
+mh.insert(60);
+
+console.log(mh.extractMax()); // 100
+console.log(mh.peek());       // 60

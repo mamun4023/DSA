@@ -1,0 +1,34 @@
+// Using DFS (Recursive) – Most Common
+
+function countNodes(root) {
+  if (root === null) return 0;
+
+  return 1 + countNodes(root.left) + countNodes(root.right);
+}
+
+
+
+// Using BFS (Iterative)
+
+function countNodes(root) {
+  if (!root) return 0;
+
+  let count = 0;
+  const queue = [root];
+
+  while (queue.length > 0) {
+    const node = queue.shift();
+    count++;
+
+    if (node.left) queue.push(node.left);
+    if (node.right) queue.push(node.right);
+  }
+
+  return count;
+}
+
+
+
+DFS → recursion, simple, elegant
+
+BFS → iterative, avoids stack overflow

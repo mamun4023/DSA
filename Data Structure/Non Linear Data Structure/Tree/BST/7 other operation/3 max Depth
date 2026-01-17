@@ -1,16 +1,9 @@
-	maxDepth(node){
-		if(node == null)
-			return 0;
+// Using DFS
+function maxDepth(root){
+    if(root == null) return 0;
 
-		if(node.left == null && node.right == null)
-			return 1;
+    const left = maxDepth(root.left);
+    const right = maxDepth(root.right);
 
-		if(node.left == null)
-			return this.maxDepth(node.right)+1
-
-		if(node.right == null)
-			return this.maxDepth(node.left)+1
-
-
-		return Math.min(this.maxDepth(node.left), this.maxDepth(node.right))+1
-	}
+    return  1 + Max.max(left, right)
+}

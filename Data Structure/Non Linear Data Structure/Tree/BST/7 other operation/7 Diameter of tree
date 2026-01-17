@@ -1,0 +1,19 @@
+function diameterOfBinaryTree(root) {
+  let diameter = 0; // global max
+
+  function height(node) {
+    if (node === null) return 0;
+
+    const left = height(node.left);
+    const right = height(node.right);
+
+    // update diameter at this node
+    diameter = Math.max(diameter, left + right + 1);
+
+    // return height of this node
+    return 1 + Math.max(left, right);
+  }
+
+  height(root);
+  return diameter; // number of nodes in diameter
+}

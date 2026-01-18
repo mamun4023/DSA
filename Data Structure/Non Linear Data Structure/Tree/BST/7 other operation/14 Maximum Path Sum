@@ -1,0 +1,23 @@
+function maxPathSum(root) {
+    let maxSum = -Infinity;
+
+    function dfs(node) {
+        if (node === null) return 0;
+
+        // max path on left/right (ignore negative)
+        const leftGain = Math.max(0, dfs(node.left));
+        const rightGain = Math.max(0, dfs(node.right));
+
+        // path passing through this node
+        const currentPath = node.val + leftGain + rightGain;
+
+        // update global max
+        maxSum = Math.max(maxSum, currentPath);
+
+        // return best single path
+        return node.val + Math.max(leftGain, rightGain);
+    }
+
+    dfs(root);
+    return maxSum;
+}

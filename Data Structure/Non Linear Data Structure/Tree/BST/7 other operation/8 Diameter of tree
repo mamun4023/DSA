@@ -1,3 +1,6 @@
+
+diameter = longest height of left sub tree + longest height of right sub tree
+
 function diameterOfBinaryTree(root) {
   let diameter = 0; // global max
 

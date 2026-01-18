@@ -8,3 +8,15 @@
 			return node.data + leftSum + rightSum
 		}
 	}
+
+
+
+// more professional
+
+treeSum(node) {
+    if (node === null) return 0;
+
+    return node.data +
+           this.treeSum(node.left) +
+           this.treeSum(node.right);
+}

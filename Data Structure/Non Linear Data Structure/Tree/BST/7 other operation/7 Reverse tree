@@ -1,11 +1,14 @@
-reverseTree(node){
-	if(node == null)
-		return 0;
-	else{
-		this.reverseTree(node.left)
-		this.reverseTree(node.right);
-		let temp = node.left;
-		node.left = node.right;
-		node.right = temp
-	}
+reverseTree(node) {
+    // Base case: if the node is null, just stop
+    if (node == null) return null;
+
+    // 1. Recurse down to the bottom first (Post-order traversal)
+    this.reverseTree(node.left);
+    this.reverseTree(node.right);
+
+    // 2. Swap the left and right pointers
+    [node.left, node.right] = [node.right, node.left];
+
+    // 3. Return the node (useful for re-assigning the root)
+    return node;
 }

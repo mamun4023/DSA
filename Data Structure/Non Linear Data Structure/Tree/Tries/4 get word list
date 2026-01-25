@@ -1,0 +1,29 @@
+getWordsForPrefix(prefix) {
+    let node = this.root;
+    let results = [];
+
+    // 1. Navigate to the end of the prefix
+    for (let char of prefix) {
+      if (!node.children[char]) {
+        return []; // Prefix not found
+      }
+      node = node.children[char];
+    }
+
+    // 2. Helper function to find all words from this node down
+    const findAllWords = (currentNode, currentWord) => {
+      // If we reached a node that marks the end of a word, add it to results
+      if (currentNode.isEnd) {
+        results.push(currentWord);
+      }
+
+      // Recursively visit all children
+      for (let char in currentNode.children) {
+        findAllWords(currentNode.children[char], currentWord + char);
+      }
+    };
+
+    // 3. Start the search from our current position
+    findAllWords(node, prefix);
+    return results;
+  }
